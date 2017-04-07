@@ -386,9 +386,6 @@ product/etc/permissions/com.motorola.motodisplay.xml
 system/etc/permissions/com.motorola.moto.xml:vendor/etc/permissions/com.motorola.moto.xml|ae00f0eb4b1e134e0f6f25586ec70f6faa00a528
 vendor/etc/permissions/com.motorola.camera2.xml|6d77e9310c6647cda3c35f64097a14a1bda798d3
 
-# MOTO RIL
-vendor/lib64/libsensorndkbridge.so
-
 # Offmode charging
 vendor/bin/charge_only_mode|7abae0e894fd36fd10795099b4a5025df2c1e817|0ba9713157beb424eef3e9af721374e18c88bd89
 vendor/bin/hvdcp_opti
