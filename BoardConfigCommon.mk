@@ -135,6 +135,9 @@ SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 TARGET_HAS_HDR_DISPLAY := true
 TARGET_HAS_WIDE_COLOR_DISPLAY := true
 
+# DRM
+TARGET_ENABLE_MEDIADRM_64 := true
+
 # Enable dexpreopt to speed boot time
 ifeq ($(HOST_OS),linux)
     ifneq ($(TARGET_BUILD_VARIANT),eng)
