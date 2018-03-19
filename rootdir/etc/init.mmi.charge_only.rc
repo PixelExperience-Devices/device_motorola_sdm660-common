@@ -1,5 +1,5 @@
 on moto-charger
-    setprop ro.board.platform msm8998
+    setprop ro.board.platform sdm660
     load_system_props
     trigger firmware_mounts_complete
     setprop sys.usb.config charging

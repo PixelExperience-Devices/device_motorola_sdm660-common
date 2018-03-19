@@ -9,7 +9,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product-if-exists, vendor/motorola/nash/nash-vendor.mk)
 
 # Device
-$(call inherit-product, device/motorola/nash/device.mk)
+$(call inherit-product, device/motorola/payton/device.mk)
 
 # A/B updater
 AB_OTA_UPDATER := true
@@ -37,35 +37,35 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    bootctrl.qcom
+    bootctrl.sdm660
 
 PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.qcom \
+    bootctrl.sdm660 \
     libgptutils \
     libz
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += device/motorola/nash/overlay
+DEVICE_PACKAGE_OVERLAYS += device/motorola/payton/overlay
 
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
 # TWRP
 ifeq ($(WITH_TWRP),true)
-$(call inherit-product, device/motorola/nash/twrp/twrp.mk)
+$(call inherit-product, device/motorola/payton/twrp/twrp.mk)
 else
-TARGET_RECOVERY_FSTAB := device/motorola/nash/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/motorola/payton/rootdir/etc/fstab.qcom
 endif
 
 # Device identifiers
-PRODUCT_DEVICE := nash
-PRODUCT_NAME := lineage_nash
+PRODUCT_DEVICE := payton
+PRODUCT_NAME := lineage_payton
 PRODUCT_BRAND := motorola
-PRODUCT_MODEL := Moto Z2
+PRODUCT_MODEL := Moto X4
 PRODUCT_MANUFACTURER := Motorola
-PRODUCT_RELEASE_NAME := nash
+PRODUCT_RELEASE_NAME := payton
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-        PRODUCT_NAME=nash
+        PRODUCT_NAME=payton
 
-BUILD_FINGERPRINT := motorola/nash_tmo/nash:8.0.0/OCX27.109-36/43:user/release-keys
+BUILD_FINGERPRINT := motorola/payton/payton:8.0.0/OPWS27.57-25-6-10/12:user/release-keys

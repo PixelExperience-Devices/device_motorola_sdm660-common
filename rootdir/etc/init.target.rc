@@ -94,8 +94,8 @@ on init
     start qcom-power
 
 on fs
-    wait /dev/block/platform/soc/1da4000.ufshc
-    symlink /dev/block/platform/soc/1da4000.ufshc /dev/block/bootdevice
+    wait /dev/block/platform/soc/c0c4000.sdhci
+    symlink /dev/block/platform/soc/c0c4000.sdhci /dev/block/bootdevice
     mount_all /vendor/etc/fstab.qcom
     # Motorola: swapon_all moved to init.mmi.rc
     # swapon_all /vendor/etc/fstab.qcom

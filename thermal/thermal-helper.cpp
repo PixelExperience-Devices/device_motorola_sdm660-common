@@ -50,8 +50,8 @@ static unsigned int gVrThrottledBelowMin;
  */
 bool initThermal() {
     std::string hardware = android::base::GetProperty("ro.hardware", "");
-    if (hardware == "nash") {
-        LOG(ERROR) << "Initialization on Nash";
+    if (hardware == "payton") {
+        LOG(ERROR) << "Initialization on Payton";
         gSkinSensorNum = kSkinSensorNum;
         gSkinSensorType = kSkinSensorType;
         gTsensOffset = kTsensOffset;

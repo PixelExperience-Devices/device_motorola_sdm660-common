@@ -1,5 +1,5 @@
 #
-# system.prop for nash
+# system.prop for payton
 #
 
 # Audio
@@ -72,10 +72,7 @@ ro.sf.lcd_density=560
 ro.sf.hwrotation=180
 
 # Factory reset partition
-ro.frp.pst=/dev/block/platform/soc/1da4000.ufshc/by-name/frp
-
-# Mods
-sys.mod.platformsdkversion=205
+ro.frp.pst=/dev/block/platform/soc/c0c4000.sdhci/by-name/frp
 
 # NFC
 ro.nfc.port=I2C
@@ -173,7 +170,7 @@ ro.qti.sensors.mot_detect=true
 ro.qti.sensors.multishake=true
 ro.qti.sensors.sta_detect=true
 
-ro.hardware.sensors=nash
+ro.hardware.sensors=payton
 ro.vendor.sensors.maghalcal=true
 ro.vendor.sensors.amd=false
 ro.vendor.sensors.pmd=false

@@ -18,7 +18,7 @@
 
 set -e
 
-DEVICE=nash
+DEVICE=payton
 VENDOR=motorola
 
 INITIAL_COPYRIGHT_YEAR=2017

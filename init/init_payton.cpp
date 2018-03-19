@@ -80,9 +80,4 @@ void vendor_load_properties()
 
     num_sims();
 
-    if (sku == "XT1789-04") {
-        /* nash_tmo */
-    } else {
-        /* unknown */
-    }
 }

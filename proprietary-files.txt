@@ -54,7 +54,7 @@ etc/zaf/zaf_imx386.json
 etc/zaf/zaf_imx386_mono.json
 lib/hw/libSonyDefocus.so
 vendor/bin/vl53l1_daemon
-vendor/lib/hw/camera.msm8998.so
+vendor/lib/hw/camera.sdm660.so
 vendor/lib/libactuator_mot_ak7371.so
 vendor/lib/libchromatix_imx386_4k_video_3a.so
 vendor/lib/libchromatix_imx386_common.so
@@ -534,8 +534,8 @@ vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-fpcservice
 vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
 
 # Gatekeeper
-vendor/lib/hw/gatekeeper.msm8998.so
-vendor/lib64/hw/gatekeeper.msm8998.so
+vendor/lib/hw/gatekeeper.sdm660.so
+vendor/lib64/hw/gatekeeper.sdm660.so
 
 # GPS
 lib/vendor.qti.gnss@1.0.so
@@ -615,7 +615,7 @@ vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/egl/libQTapGLES.so
-vendor/lib/hw/vulkan.msm8998.so
+vendor/lib/hw/vulkan.sdm660.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libbccQTI.so
 vendor/lib/libC2D2.so
@@ -646,7 +646,7 @@ vendor/lib64/egl/libGLESv1_CM_adreno.so
 vendor/lib64/egl/libGLESv2_adreno.so
 vendor/lib64/egl/libq3dtools_adreno.so
 vendor/lib64/egl/libQTapGLES.so
-vendor/lib64/hw/vulkan.msm8998.so
+vendor/lib64/hw/vulkan.sdm660.so
 vendor/lib64/libadreno_utils.so
 vendor/lib64/libbccQTI.so
 vendor/lib64/libC2D2.so
@@ -680,8 +680,8 @@ vendor/lib64/libhdr_tm.so
 vendor/bin/ipacm-diag
 
 # Keystore
-vendor/lib/hw/keystore.msm8998.so
-vendor/lib64/hw/keystore.msm8998.so
+vendor/lib/hw/keystore.sdm660.so
+vendor/lib64/hw/keystore.sdm660.so
 
 # Listen
 vendor/lib/libgcs-calwrapper.so
@@ -960,14 +960,14 @@ vendor/lib64/libqmimotext.so
 
 # Sensors
 vendor/bin/sensors.qcom
-vendor/lib/hw/activity_recognition.msm8998.so
+vendor/lib/hw/activity_recognition.sdm660.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
 vendor/lib/libsensor1.so
 vendor/lib/libsns_low_lat_stream_stub.so
 vendor/lib/sensor_calibrate.so
 vendor/lib/sensors.ssc.so
-vendor/lib64/hw/activity_recognition.msm8998.so
+vendor/lib64/hw/activity_recognition.sdm660.so
 vendor/lib64/libsensor1.so
 vendor/lib64/libsensor_reg.so
 vendor/lib64/libsensor1.so

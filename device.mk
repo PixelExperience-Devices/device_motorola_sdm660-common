@@ -29,7 +29,7 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.0-service \
     audiod \
     audio.a2dp.default \
-    audio.primary.msm8998 \
+    audio.primary.sdm660 \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
@@ -40,11 +40,11 @@ PRODUCT_PACKAGES += \
     tinymix
 
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
-    device/motorola/nash/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf \
-    device/motorola/nash/audio/audio_ext_spkr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_ext_spkr.conf \
-    device/motorola/nash/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
-    device/motorola/nash/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
+    device/motorola/payton/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
+    device/motorola/payton/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf \
+    device/motorola/payton/audio/audio_ext_spkr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_ext_spkr.conf \
+    device/motorola/payton/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
+    device/motorola/payton/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
@@ -70,10 +70,10 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/configs/camera/camera_config.xml:/system/etc/camera/camera_config.xml \
-    device/motorola/nash/configs/camera/imx386_chromatix.xml:/system/etc/camera/imx386_chromatix.xml \
-    device/motorola/nash/configs/camera/imx386_mono_chromatix.xml:/system/etc/camera/imx386_mono_chromatix.xml \
-    device/motorola/nash/configs/camera/mot_ov5695_chromatix.xml:/system/etc/camera/mot_ov5695_chromatix.xml
+    device/motorola/payton/configs/camera/camera_config.xml:/system/etc/camera/camera_config.xml \
+    device/motorola/payton/configs/camera/imx386_chromatix.xml:/system/etc/camera/imx386_chromatix.xml \
+    device/motorola/payton/configs/camera/imx386_mono_chromatix.xml:/system/etc/camera/imx386_mono_chromatix.xml \
+    device/motorola/payton/configs/camera/mot_ov5695_chromatix.xml:/system/etc/camera/mot_ov5695_chromatix.xml
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
@@ -114,10 +114,10 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
-    copybit.msm8998 \
-    gralloc.msm8998 \
-    hwcomposer.msm8998 \
-    memtrack.msm8998 \
+    copybit.sdm660 \
+    gralloc.sdm660 \
+    hwcomposer.sdm660 \
+    memtrack.sdm660 \
     libdisplayconfig \
     libgenlock \
     liboverlay \
@@ -134,7 +134,7 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1
 
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl
+    device/motorola/payton/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl
 
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
@@ -178,7 +178,7 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/rootdir/root/ueventd.qcom.rc:root/ueventd.qcom.rc
+    device/motorola/payton/rootdir/root/ueventd.qcom.rc:root/ueventd.qcom.rc
 
 PRODUCT_PACKAGES += \
     fstab.qcom \
@@ -224,16 +224,15 @@ PRODUCT_PACKAGES += \
 
 # IRQ
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
+    device/motorola/payton/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
 # IRSC
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
+    device/motorola/payton/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/fpc1020.kl:system/usr/keylayout/fpc1020.kl \
-    $(LOCAL_PATH)/keylayout/Vendor_22b8_Product_ffff.kl:system/usr/keylayout/Vendor_22b8_Product_ffff.kl
+    $(LOCAL_PATH)/keylayout/fpc1020.kl:system/usr/keylayout/fpc1020.kl
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
@@ -242,7 +241,7 @@ PRODUCT_PACKAGES += \
 
 # LED packages
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.nash
+    android.hardware.light@2.0-service.payton
 
 # LineageActions
 PRODUCT_PACKAGES += \
@@ -258,9 +257,9 @@ PRODUCT_BOOT_JARS += \
 
 # Media
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
-    device/motorola/nash/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
-    device/motorola/nash/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
+    device/motorola/payton/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
+    device/motorola/payton/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
+    device/motorola/payton/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml
@@ -274,15 +273,15 @@ PRODUCT_PACKAGES += \
     android.hardware.nfc@1.0-impl \
     android.hardware.nfc@1.0-service \
     com.android.nfc_extras \
-    nfc_nci.msm8998 \
+    nfc_nci.sdm660 \
     NfcNci \
     nqnfcee_access.xml \
     nqnfcse_access.xml \
     Tag
 
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/configs/libnfc-brcm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-brcm.conf \
-    device/motorola/nash/configs/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
+    device/motorola/payton/configs/libnfc-brcm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-brcm.conf \
+    device/motorola/payton/configs/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -325,7 +324,7 @@ PRODUCT_COPY_FILES += \
 
 # QCOM
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
+    device/motorola/payton/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
 
 # OMX
 PRODUCT_PACKAGES += \
@@ -342,10 +341,10 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.1-service.nash
+    android.hardware.power@1.1-service.payton
 
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
+    device/motorola/payton/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
 # QMI
 PRODUCT_PACKAGES += \
@@ -365,10 +364,10 @@ PRODUCT_PACKAGES += \
 
 # Recovery
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/recovery/root/init.recovery.nash.rc:root/init.recovery.nash.rc \
-    device/motorola/nash/recovery/root/init.recovery.nash.usb.rc:root/init.recovery.nash.usb.rc \
-    device/motorola/nash/recovery/root/init.recovery.usb.configfs.rc:root/init.recovery.usb.configfs.rc \
-    device/motorola/nash/recovery/root/init.recovery.usb.rc:root/init.recovery.usb.rc
+    device/motorola/payton/recovery/root/init.recovery.payton.rc:root/init.recovery.payton.rc \
+    device/motorola/payton/recovery/root/init.recovery.payton.usb.rc:root/init.recovery.payton.usb.rc \
+    device/motorola/payton/recovery/root/init.recovery.usb.configfs.rc:root/init.recovery.usb.configfs.rc \
+    device/motorola/payton/recovery/root/init.recovery.usb.rc:root/init.recovery.usb.rc
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
@@ -376,13 +375,13 @@ PRODUCT_PACKAGES += \
 
 # Seccomp
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
-    device/motorola/nash/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
+    device/motorola/payton/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
+    device/motorola/payton/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
 
 # Sensors
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf \
-    device/motorola/nash/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+    device/motorola/payton/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf \
+    device/motorola/payton/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
 
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
@@ -409,7 +408,7 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.1-service.nash
+    android.hardware.thermal@1.1-service.payton
 
 # Touchscreen
 PRODUCT_PACKAGES += \
@@ -423,7 +422,7 @@ PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
 
 # Verity
-PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/soc/1da4000.ufshc/by-name/system
+PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/soc/c0c4000.sdhci/by-name/system
 $(call inherit-product, build/target/product/verity.mk)
 
 # Vibrator
@@ -440,10 +439,10 @@ PRODUCT_PACKAGES += \
 
 # Wifi
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/wifi/wifi_concurrency_cfg.txt:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wifi_concurrency_cfg.txt \
-    device/motorola/nash/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
-    device/motorola/nash/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
-    device/motorola/nash/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
+    device/motorola/payton/wifi/wifi_concurrency_cfg.txt:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wifi_concurrency_cfg.txt \
+    device/motorola/payton/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    device/motorola/payton/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
+    device/motorola/payton/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
 
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
