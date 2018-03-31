@@ -56,6 +56,7 @@ persist.camera.is_type=3
 persist.camera.max.previewfps=60
 vidc.enc.dcvs.extra-buff-count=2
 persist.camera.preview.ubwc=0
+video.disable.ubwc=1
 
 # Color Mode
 vendor.display.enable_default_color_mode=1
