@@ -23,3 +23,5 @@ allow rild input_device:chr_file { ioctl open read };
 
 binder_call(rild, qtidataservices_app)
 dontaudit rild diag_device:chr_file rw_file_perms;
+
+get_prop(rild, vendor_pd_locater_dbg_prop)
