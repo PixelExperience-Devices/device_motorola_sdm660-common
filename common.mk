@@ -46,8 +46,7 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    libvolumelistener \
-    tinymix
+    libvolumelistener
 
 ifneq ($(PREBUILT_AUDIOHAL), true)
 PRODUCT_PACKAGES += \
