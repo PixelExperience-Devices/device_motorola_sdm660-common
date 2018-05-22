@@ -41,7 +41,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     device/motorola/payton/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
-    device/motorola/payton/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf \
+    device/motorola/payton/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
     device/motorola/payton/audio/audio_ext_spkr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_ext_spkr.conf \
     device/motorola/payton/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
     device/motorola/payton/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
@@ -71,9 +71,10 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_COPY_FILES += \
     device/motorola/payton/configs/camera/camera_config.xml:/system/etc/camera/camera_config.xml \
-    device/motorola/payton/configs/camera/imx386_chromatix.xml:/system/etc/camera/imx386_chromatix.xml \
-    device/motorola/payton/configs/camera/imx386_mono_chromatix.xml:/system/etc/camera/imx386_mono_chromatix.xml \
-    device/motorola/payton/configs/camera/mot_ov5695_chromatix.xml:/system/etc/camera/mot_ov5695_chromatix.xml
+    device/motorola/payton/configs/camera/mot_s5k2l7sa_chromatix.xml:/system/etc/camera/mot_s5k2l7sa_chromatix.xml \
+    device/motorola/payton/configs/camera/mot_s5k3p8sp_chromatix.xml:/system/etc/camera/mot_s5k3p8sp_chromatix.xml \
+    device/motorola/payton/configs/camera/mot_s5k4h8_aux_chromatix.xml:/system/etc/camera/mot_s5k4h8_aux_chromatix.xml
+
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
