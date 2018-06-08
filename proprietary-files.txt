@@ -96,7 +96,6 @@ vendor/lib/libcppf.so
 vendor/lib/liboemcrypto.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libsdedrm.so
-vendor/lib/libspl.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
 vendor/lib64/libGPreqcancel_svc.so
@@ -106,7 +105,6 @@ vendor/lib64/libQSEEComAPI.so
 vendor/lib64/librpmb.so
 vendor/lib64/libsdedrm.so
 vendor/lib64/libSecureUILib.so
-vendor/lib64/libspl.so
 vendor/lib64/libssd.so
 
 # DRM - HDCP
@@ -419,13 +417,6 @@ vendor/bin/gamed
 vendor/bin/msm_irqbalance
 vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
 vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
-vendor/etc/perf/perf-profile0.conf
-vendor/etc/perf/perf-profile1.conf
-vendor/etc/perf/perf-profile2.conf
-vendor/etc/perf/perf-profile3.conf
-vendor/etc/perf/perf-profile4.conf
-vendor/etc/perf/perf-profile5.conf
-vendor/etc/perf/perf-profile6.conf
 vendor/etc/perf/perfboostsconfig.xml
 vendor/lib/libfeedbackhandler.so
 vendor/lib/libperfgluelayer.so
@@ -445,11 +436,8 @@ vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so
 # Peripheral manager
 vendor/bin/pm-proxy
 vendor/bin/pm-service
-vendor/bin/spdaemon
 vendor/lib/libperipheral_client.so
-vendor/lib/libspcom.so
 vendor/lib64/libperipheral_client.so
-vendor/lib64/libspcom.so
 
 # Postprocessing
 etc/permissions/com.qti.snapdragon.sdk.display.xml
@@ -647,7 +635,7 @@ vendor/lib/lib_motsensorlistener.so
 
 # Thermal
 vendor/bin/thermal-engine
-vendor/etc/thermal-engine.conf|04a67cd64dee5d9718fd2b1f0dd96e3531165313
+etc/thermal-engine-payton.conf:vendor/etc/thermal-engine.conf
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
