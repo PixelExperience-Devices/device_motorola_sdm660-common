@@ -37,9 +37,9 @@ fi
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true
 
 # Copyright headers and guards
-write_headers
+write_headers "payton"
 
-write_makefiles "$MY_DIR"/proprietary-files.txt true
+write_makefiles "$MY_DIR"/proprietary-files.txt
 
 cat << EOF >> "$ANDROIDMK"
 
