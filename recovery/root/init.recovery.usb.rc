@@ -1,4 +1,4 @@
-import /init.recovery.payton.usb.rc
+import /init.recovery.sdm660.usb.rc
 import /init.recovery.usb.configfs.rc
 
 on post-fs-data

@@ -1,4 +1,0 @@
-service thermal-hal-1-1 /vendor/bin/hw/android.hardware.thermal@1.1-service.payton
-    class hal
-    user nobody
-    group nobody

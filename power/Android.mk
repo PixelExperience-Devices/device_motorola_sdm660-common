@@ -21,8 +21,8 @@ LOCAL_PROPRIETARY_MODULE := true
 LOCAL_MODULE_OWNER := qcom
 LOCAL_MODULE_TAGS := optional
 
-LOCAL_MODULE := android.hardware.power@1.1-service.payton
-LOCAL_INIT_RC := android.hardware.power@1.1-service.payton.rc
+LOCAL_MODULE := android.hardware.power@1.1-service.sdm660
+LOCAL_INIT_RC := android.hardware.power@1.1-service.sdm660.rc
 LOCAL_SRC_FILES := service.cpp \
     Power.cpp \
     InteractionHandler.cpp \

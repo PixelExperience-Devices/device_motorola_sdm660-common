@@ -35,16 +35,6 @@ $(shell mkdir -p $(TARGET_OUT_VENDOR)/firmware; \
     ln -sf /dev/block/bootdevice/by-name/msadp \
         $(TARGET_OUT_VENDOR)/firmware/msadp)
 
-MODS_LIBS := libmodhw.so
-MODS_SYMLINKS := $(addprefix $(TARGET_OUT)/priv-app/ModFmwkProxyService/lib/arm64/,$(notdir $(MODS_LIBS)))
-$(MODS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "MODS lib link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /system/lib64/$(notdir $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(MODS_SYMLINKS)
-
 DSP_SYMLINK := $(TARGET_OUT_VENDOR)/lib/dsp
 $(DSP_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 	@echo "Creating DSP folder symlink: $@"

@@ -14,7 +14,19 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/motorola/payton
+#
+# This file sets variables that control the way modules are built
+# thorughout the system. It should not be used to conditionally
+# disable makefiles (the proper mechanism to control what gets
+# included in a build is to use PRODUCT_PACKAGES in a product
+# definition file).
+#
+
+PLATFORM_PATH := device/motorola/sdm660-common
+
+TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
+
+BOARD_VENDOR := motorola
 
 # Platform
 TARGET_ARCH := arm64
@@ -32,7 +44,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a73
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
 BOARD_USES_QCOM_HARDWARE := true
-TARGET_BOOTLOADER_BOARD_NAME := Payton
+TARGET_BOOTLOADER_BOARD_NAME := SDM660
 TARGET_BOARD_PLATFORM := sdm660
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno512
 TARGET_HAS_NO_SELECT_BUTTON := true
@@ -98,7 +110,6 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib64/libmdmcutback.so|libqsap_shim.so
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 QCOM_BT_USE_BTNV := true
@@ -126,20 +137,27 @@ SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 TARGET_HAS_HDR_DISPLAY := true
 TARGET_HAS_WIDE_COLOR_DISPLAY := true
 
+# Enable dexpreopt to speed boot time
+ifeq ($(HOST_OS),linux)
+    ifneq ($(TARGET_BUILD_VARIANT),eng)
+        ifeq ($(WITH_DEXPREOPT),)
+            WITH_DEXPREOPT := true
+            WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+        endif
+    endif
+endif
+
 # GPS
 TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 
-# Hardware tunables
-BOARD_USES_CYANOGEN_HARDWARE := true
-
 # HIDL
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
 TARGET_FS_CONFIG_GEN += \
-    $(DEVICE_PATH)/config.fs \
-    $(DEVICE_PATH)/mot_aids.fs
+    $(PLATFORM_PATH)/config.fs \
+    $(PLATFORM_PATH)/mot_aids.fs
 
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3
@@ -153,7 +171,6 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8998
-TARGET_KERNEL_CONFIG := lineageos_payton_defconfig
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
 
@@ -165,8 +182,6 @@ BOARD_NFC_CHIPSET := pn553
 BOARD_NFC_HAL_SUFFIX := $(TARGET_BOARD_PLATFORM)
 
 # Partitions
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x04000000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x102000000
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_FLASH_BLOCK_SIZE := 0x40000
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -184,7 +199,7 @@ BOARD_ROOT_EXTRA_FOLDERS := bt_firmware dsp firmware fsg persist
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
 
 # Timeservice
 BOARD_USES_QC_TIME_SERVICES := true
@@ -193,9 +208,16 @@ BOARD_USES_QC_TIME_SERVICES := true
 PRODUCT_SHIPPING_API_LEVEL := 25
 PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
 
+# TWRP
+ifeq ($(WITH_TWRP),true)
+$(call inherit-product, device/motorola/sdm660-common/twrp/twrp.mk)
+else
+TARGET_RECOVERY_FSTAB := device/motorola/sdm660-common/rootdir/etc/fstab.qcom
+endif
+
 # Vendor Init
-TARGET_INIT_VENDOR_LIB := libinit_payton
-TARGET_RECOVERY_DEVICE_MODULES := libinit_payton
+TARGET_INIT_VENDOR_LIB := libinit_sdm660
+TARGET_RECOVERY_DEVICE_MODULES := libinit_sdm660
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
