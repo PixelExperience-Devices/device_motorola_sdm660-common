@@ -325,10 +325,10 @@
     <bool name="config_useDevInputEventForAudioJack">true</bool>
 
     <!-- MMS user agent string -->
-    <string name="config_mms_user_agent" translatable="false">motoz2</string>
+    <string name="config_mms_user_agent" translatable="false">motox4</string>
 
     <!-- MMS user agent prolfile url -->
-    <string name="config_mms_user_agent_profile_url">http://uaprof.motorola.com/phoneconfig/motoz2/Profile/motoz2.rdf</string>
+    <string name="config_mms_user_agent_profile_url">http://uaprof.motorola.com/phoneconfig/motox4/Profile/motox4.rdf</string>
 
     <!-- Flag indicating if the speed up audio on mt call code should be executed -->
     <bool name="config_speed_up_audio_on_mt_calls">true</bool>
