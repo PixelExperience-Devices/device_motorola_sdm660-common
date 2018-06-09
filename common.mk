@@ -409,6 +409,10 @@ PRODUCT_PACKAGES += brillo_update_payload
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
 
+# Vendor security patch level
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lineage.build.vendor_security_patch=2018-03-01
+
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
