@@ -207,17 +207,6 @@ BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
 # Timeservice
 BOARD_USES_QC_TIME_SERVICES := true
 
-# Treble
-PRODUCT_SHIPPING_API_LEVEL := 25
-PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
-
-# TWRP
-ifeq ($(WITH_TWRP),true)
-$(call inherit-product, device/motorola/sdm660-common/twrp/twrp.mk)
-else
-TARGET_RECOVERY_FSTAB := device/motorola/sdm660-common/rootdir/etc/fstab.qcom
-endif
-
 # Vendor Init
 TARGET_INIT_VENDOR_LIB := libinit_sdm660
 TARGET_RECOVERY_DEVICE_MODULES := libinit_sdm660
