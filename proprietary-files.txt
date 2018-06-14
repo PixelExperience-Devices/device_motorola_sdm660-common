@@ -653,7 +653,6 @@ vendor/lib/lib_motsensorlistener.so
 
 # Thermal
 vendor/bin/thermal-engine
-etc/thermal-engine-payton.conf:vendor/etc/thermal-engine.conf
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
@@ -677,4 +676,3 @@ lib/libqmi_cci_system.so
 lib/libvendorconn.so
 lib64/libqmi_cci_system.so
 lib64/libvendorconn.so
-
