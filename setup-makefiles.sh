@@ -39,7 +39,7 @@ setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true
 # Copyright headers and guards
 write_headers "payton evert"
 
-write_makefiles "$MY_DIR"/proprietary-files.txt
+write_makefiles "$MY_DIR"/proprietary-files.txt true
 
 cat << EOF >> "$ANDROIDMK"
 
@@ -57,7 +57,7 @@ if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
     write_headers
 
     # The standard device blobs
-    write_makefiles "$MY_DIR"/../$DEVICE/proprietary-files.txt
+    write_makefiles "$MY_DIR"/../$DEVICE/proprietary-files.txt true
 
     # We are done!
     write_footers
