@@ -67,6 +67,9 @@ ro.qualcomm.cabl=0
 # Factory reset partition
 ro.frp.pst=/dev/block/platform/soc/c0c4000.sdhci/by-name/frp
 
+# FM
+ro.fm.transmitter=false
+
 # NFC
 ro.nfc.port=I2C
 

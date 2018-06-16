@@ -125,9 +125,12 @@ PRODUCT_PACKAGES += \
 
 # FM
 PRODUCT_PACKAGES += \
-    FMRadio \
-    libfmjni \
-    init.qti.fm.sh
+    FM2 \
+    libqcomfm_jni \
+    init.qti.fm.sh \
+    qcom.fmradio
+
+PRODUCT_BOOT_JARS += qcom.fmradio
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl

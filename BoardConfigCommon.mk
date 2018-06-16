@@ -149,6 +149,7 @@ endif
 
 # FM
 BOARD_HAVE_QCOM_FM := true
+BOARD_HAS_QCA_FM_SOC := "cherokee"
 
 # GPS
 TARGET_NO_RPC := true
