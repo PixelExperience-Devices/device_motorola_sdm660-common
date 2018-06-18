@@ -50,7 +50,7 @@ static unsigned int gVrThrottledBelowMin;
  */
 bool initThermal() {
     std::string hardware = android::base::GetProperty("ro.hardware", "");
-    if (hardware == "sdm660") {
+    if (hardware == "qcom") {
         LOG(ERROR) << "Initialization on Sdm660";
         gSkinSensorNum = kSkinSensorNum;
         gSkinSensorType = kSkinSensorType;
