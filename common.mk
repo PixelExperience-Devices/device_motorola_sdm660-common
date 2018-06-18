@@ -354,10 +354,8 @@ PRODUCT_PACKAGES += \
 
 # Recovery
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/recovery/root/init.recovery.sdm660.rc:root/init.recovery.sdm660.rc \
-    $(LOCAL_PATH)/recovery/root/init.recovery.sdm660.usb.rc:root/init.recovery.sdm660.usb.rc \
-    $(LOCAL_PATH)/recovery/root/init.recovery.usb.configfs.rc:root/init.recovery.usb.configfs.rc \
-    $(LOCAL_PATH)/recovery/root/init.recovery.usb.rc:root/init.recovery.usb.rc
+    $(LOCAL_PATH)/recovery/root/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
+    $(LOCAL_PATH)/recovery/root/init.recovery.qcom.usb.rc:root/init.recovery.qcom.usb.rc
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
