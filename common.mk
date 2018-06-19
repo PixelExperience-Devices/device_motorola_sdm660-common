@@ -132,9 +132,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += qcom.fmradio
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl
-
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
@@ -213,10 +210,6 @@ PRODUCT_COPY_FILES += \
 # IRSC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
-
-# Keylayouts
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/fpc1020.kl:system/usr/keylayout/fpc1020.kl
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
