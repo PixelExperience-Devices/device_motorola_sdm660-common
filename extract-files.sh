@@ -64,4 +64,10 @@ if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
     extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC" "$SECTION"
 fi
 
+COMMON_BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE_COMMON"/proprietary
+
+# Load wrapped shim
+MDMCUTBACK="$COMMON_BLOB_ROOT"/vendor/lib64/libmdmcutback.so
+sed -i "s|libqsap_sdk.so|libqsapshim.so|g" "$MDMCUTBACK"
+
 "$MY_DIR"/setup-makefiles.sh
