@@ -24,6 +24,9 @@
 
 $(call inherit-product, vendor/motorola/sdm660-common/sdm660-common-vendor.mk)
 
+# Properties
+-include $(LOCAL_PATH)/vendor_prop.mk
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
