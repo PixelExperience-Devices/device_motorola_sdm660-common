@@ -106,8 +106,8 @@ AUDIO_USE_LL_AS_PRIMARY_OUTPUT := true
 
 # Bionic
 TARGET_LD_SHIM_LIBS := \
-    /system/vendor/lib/libmdmcutback.so|libqsap_shim.so \
-    /system/vendor/lib64/libmdmcutback.so|libqsap_shim.so
+    /vendor/lib/libmdmcutback.so|libqsap_shim.so \
+    /vendor/lib64/libmdmcutback.so|libqsap_shim.so
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -202,6 +202,7 @@ TARGET_NO_RECOVERY := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USES_MKE2FS := true
+TARGET_COPY_OUT_VENDOR := vendor
 
 # Properties
 TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
