@@ -175,7 +175,6 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    init.mmi.laser.sh \
     init.mmi.ramdump.rc \
     init.mmi.usb.rc \
     init.mmi.usb.sh \
