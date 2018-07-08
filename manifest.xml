@@ -209,10 +209,12 @@
         <interface>
             <name>IRadio</name>
             <instance>slot1</instance>
+            <instance>slot2</instance>
         </interface>
         <interface>
             <name>ISap</name>
             <instance>slot1</instance>
+            <instance>slot2</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -222,6 +224,7 @@
         <interface>
             <name>IOemHook</name>
             <instance>slot1</instance>
+            <instance>slot2</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -502,6 +505,7 @@
         <interface>
             <name>IQcRilAudio</name>
             <instance>slot1</instance>
+            <instance>slot2</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -520,6 +524,7 @@
         <interface>
             <name>IConfig</name>
             <instance>radioconfig0</instance>
+            <instance>radioconfig1</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -529,6 +534,7 @@
         <interface>
             <name>IImsRadio</name>
             <instance>imsradio0</instance>
+            <instance>imsradio1</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -538,6 +544,7 @@
         <interface>
             <name>IUimLpa</name>
             <instance>UimLpa0</instance>
+            <instance>UimLpa1</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -556,6 +563,7 @@
         <interface>
             <name>IQtiRadio</name>
             <instance>slot1</instance>
+            <instance>slot2</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -565,6 +573,7 @@
         <interface>
             <name>IUim</name>
             <instance>Uim0</instance>
+            <instance>Uim1</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -574,6 +583,7 @@
         <interface>
             <name>IUimRemoteServiceClient</name>
             <instance>uimRemoteClient0</instance>
+            <instance>uimRemoteClient1</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -583,6 +593,7 @@
         <interface>
             <name>IUimRemoteServiceServer</name>
             <instance>uimRemoteServer0</instance>
+            <instance>uimRemoteServer1</instance>
         </interface>
     </hal>
     <hal format="hidl">
