@@ -208,6 +208,7 @@ TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
 
 # RIL
 TARGET_RIL_VARIANT := caf
+TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Root
 BOARD_ROOT_EXTRA_FOLDERS := bt_firmware dsp firmware fsg persist
