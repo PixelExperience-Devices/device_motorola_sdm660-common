@@ -35,6 +35,8 @@ $(shell mkdir -p $(TARGET_OUT_VENDOR)/firmware; \
     ln -sf /dev/block/bootdevice/by-name/msadp \
         $(TARGET_OUT_VENDOR)/firmware/msadp)
 
+$(shell mkdir -p $(TARGET_OUT_VENDOR)/fsg)
+
 DSP_SYMLINK := $(TARGET_OUT_VENDOR)/lib/dsp
 $(DSP_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 	@echo "Creating DSP folder symlink: $@"
