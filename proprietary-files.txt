@@ -403,9 +403,9 @@ vendor/lib64/libvpphvx.so
 vendor/lib64/libvpplibrary.so
 
 # Moto Permissions
-etc/permissions/com.motorola.moto.xml
-etc/permissions/com.motorola.motodisplay.xml
-etc/permissions/com.motorola.camera2.xml
+etc/permissions/com.motorola.moto.xml:vendor/etc/permissions/com.motorola.moto.xml
+etc/permissions/com.motorola.motodisplay.xml:vendor/etc/permissions/com.motorola.motodisplay.xml
+etc/permissions/com.motorola.camera2.xml:vendor/etc/permissions/com.motorola.camera2.xml
 
 # NFC
 vendor/firmware/libpn553_fw.so
@@ -491,13 +491,13 @@ vendor/lib64/libquipc_os_api.so
 vendor/lib64/libsmemlog.so
 
 # Radio
--app/datastatusnotification/datastatusnotification.apk|5eb21eb70be6d7e281fc5b7c4c0240a96aba6d00
--app/QtiTelephonyService/QtiTelephonyService.apk
-etc/permissions/qcrilhook.xml
-etc/permissions/telephonyservice.xml
-framework/qcrilhook.jar
+-app/datastatusnotification/datastatusnotification.apk:vendor/app/datastatusnotification/datastatusnotification.apk|5eb21eb70be6d7e281fc5b7c4c0240a96aba6d00
+-app/QtiTelephonyService/QtiTelephonyService.apk:vendor/app/QtiTelephonyService/QtiTelephonyService.apk
+etc/permissions/qcrilhook.xml:vendor/etc/permissions/qcrilhook.xml
+etc/permissions/telephonyservice.xml:vendor/etc/permissions/telephonyservice.xml
+framework/qcrilhook.jar:vendor/framework/qcrilhook.jar
 framework/qti-telephony-common.jar|e080a3e800bf43c894c6653954e2f4e1415e645c
-framework/QtiTelephonyServicelibrary.jar
+framework/QtiTelephonyServicelibrary.jar:vendor/framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 etc/permissions/privapp-permissions-com.qualcomm.qcrilmsgtunnel.xml
 vendor/bin/ATFWD-daemon
@@ -558,8 +558,8 @@ vendor/radio/qcril_database/qcril.db
 
 # Radio - IMS
 -app/ims/ims.apk|9bb1da84fd36d3b308607954197f6596fa567f91
-etc/permissions/qti-vzw-ims-internal.xml|a573a0eafbe94d7e9edeb4924a9604a1b6a208a8
-framework/qti-vzw-ims-internal.jar|9f0c22b5b7617b3d40985a9c01b760fe19947012
+vendor/etc/permissions/qti-vzw-ims-internal.xml|89409c5f355acbd65a45b13f12e1baafb13baf46
+vendor/framework/qti-vzw-ims-internal.jar|9f0c22b5b7617b3d40985a9c01b760fe19947012
 lib/lib-imscamera.so
 lib/lib-imsvideocodec.so
 lib/lib-imsvtextutils.so
