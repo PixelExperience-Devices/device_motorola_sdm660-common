@@ -170,10 +170,6 @@
             <Feature name="adaptive-playback" />
             <Limit name="concurrent-instances" max="16" />
         </MediaCodec>
-        <!-- Audio Software  -->
-        <MediaCodec name="OMX.qti.audio.decoder.flac" type="audio/flac" >
-            <Limit name="concurrent-instances" max="10" />
-        </MediaCodec>
     </Decoders>
     <Include href="media_codecs_google_video.xml" />
 </MediaCodecs>

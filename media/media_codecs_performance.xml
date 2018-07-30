@@ -38,6 +38,12 @@
             <Limit name="measured-frame-rate-1280x720" range="30-30" />
             <Limit name="measured-frame-rate-1920x1080" range="16-16" />
         </MediaCodec>
+          <MediaCodec name="OMX.google.vp9.encoder" type="video/x-vnd.on2.vp9" update="true">
+              <Limit name="measured-frame-rate-320x180" range="140-140" />
+              <Limit name="measured-frame-rate-640x360" range="52-52" />
+              <Limit name="measured-frame-rate-1280x720" range="13-13" />
+              <Limit name="measured-frame-rate-1920x1080" range="10-10" />
+          </MediaCodec>
         <MediaCodec name="OMX.qcom.video.encoder.avc" type="video/avc" update="true">
             <Limit name="measured-frame-rate-320x240" range="288-291" />
             <Limit name="measured-frame-rate-720x480" range="88-93" />
