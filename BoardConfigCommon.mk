@@ -168,6 +168,7 @@ else
     DEVICE_MANIFEST_FILE += $(PLATFORM_PATH)/keymaster_3.xml
 endif
 DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(PLATFORM_PATH)/framework_manifest.xml
 TARGET_FS_CONFIG_GEN += \
     $(PLATFORM_PATH)/config.fs \
     $(PLATFORM_PATH)/mot_aids.fs
