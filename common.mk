@@ -123,11 +123,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += qcom.fmradio
 
-# Gatekeeper HAL
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl \
-    android.hardware.gatekeeper@1.0-service
-
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl-qti \
@@ -200,11 +195,6 @@ PRODUCT_COPY_FILES += \
 # IRSC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
-
-# Keymaster HAL
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl \
-    android.hardware.keymaster@3.0-service
 
 # LED packages
 PRODUCT_PACKAGES += \
@@ -335,10 +325,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
 
 # Sensors
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf \
-    $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
-
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service
