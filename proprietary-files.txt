@@ -421,7 +421,6 @@ vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
 
 # Postprocessing
-vendor/bin/mm-pp-dpps
 vendor/lib64/libdisp-aba.so
 
 # QMI
@@ -531,6 +530,8 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.radio.uim@1.0_vendor.so
 vendor/radio/qcril_database/qcril.db
+lib64/libnativehelper.so:vendor/lib64/libnativehelper.so
+lib/libnativehelper.so:vendor/lib/libnativehelper.so
 
 # Radio - IMS
 -app/ims/ims.apk|9bb1da84fd36d3b308607954197f6596fa567f91
@@ -567,7 +568,7 @@ vendor/lib/lib-rtpdaemoninterface.so
 vendor/lib/lib-rtpsl.so
 vendor/lib/vendor.qti.imsrtpservice@1.0_vendor.so
 vendor/lib/vendor.qti.imsrtpservice@1.0-service-Impl.so
-vendor/lib64/lib-dplmedia.so
+vendor/lib64/lib-dplmedia.so|0bceb4a47eb5bf977c17707780d79b654787a34c
 vendor/lib64/lib-imsdpl.so
 vendor/lib64/lib-imsqimf.so
 vendor/lib64/lib-imsxml.so
