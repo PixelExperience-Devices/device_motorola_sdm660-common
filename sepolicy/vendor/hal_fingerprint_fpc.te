@@ -28,3 +28,4 @@ allow hal_fingerprint_fpc fingerprint_data_file:dir rw_dir_perms;
 allow hal_fingerprint_fpc fingerprint_data_file:file create_file_perms;
 
 allow hal_fingerprint_fpc self:netlink_socket create_socket_perms_no_ioctl;
+allow hal_fingerprint_fpc system_data_file:dir getattr;
