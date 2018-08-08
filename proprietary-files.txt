@@ -542,11 +542,15 @@ vendor/lib64/libril-qc-radioconfig.so
 vendor/lib/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
 vendor/lib/libril-qcril-hook-oem.so
+vendor/lib64/libril-qc-hal-qmi.so
+vendor/lib/libril-qc-hal-qmi.so
 vendor/lib/lib-dplmedia.so
 vendor/lib64/librilqmiservices.so
 vendor/lib64/libsettings.so
 vendor/lib64/libsystem_health_mon.so
 vendor/lib/libsystem_health_mon.so
+vendor/lib64/libqcrilFramework.so
+vendor/lib/libqcrilFramework.so
 vendor/lib64/vendor.qti.hardware.radio.am@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.radio.ims@1.0_vendor.so
