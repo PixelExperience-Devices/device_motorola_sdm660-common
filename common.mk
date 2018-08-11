@@ -223,10 +223,9 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.0-impl \
-    android.hardware.nfc@1.0-service \
+    android.hardware.nfc@1.1-service \
     com.android.nfc_extras \
-    nfc_nci.sdm660 \
+    SecureElement \
     NfcNci \
     nqnfcee_access.xml \
     nqnfcse_access.xml \
