@@ -1,4 +1,4 @@
-service light-hal-2-0 /vendor/bin/hw/android.hardware.light@2.0-service.sdm660
+service vendor.light-hal-2-0 /vendor/bin/hw/android.hardware.light@2.0-service.sdm660
     class hal
     user system
     group system
