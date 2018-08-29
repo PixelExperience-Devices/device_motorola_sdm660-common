@@ -28,16 +28,31 @@ namespace light {
 namespace V2_0 {
 namespace implementation {
 
-#define LED_LIGHT_OFF 0
-#define LED_LIGHT_ON  1
-
 #define LEDS            "/sys/class/leds/"
 
 #define LCD_LED         LEDS "lcd-backlight/"
 #define CHARGING_LED    LEDS "charging/"
 
 #define BRIGHTNESS      "brightness"
+#define DUTY_PCTS       "duty_pcts"
+#define START_IDX       "start_idx"
+#define PAUSE_LO        "pause_lo"
+#define PAUSE_HI        "pause_hi"
+#define RAMP_STEP_MS    "ramp_step_ms"
+#define BLINK           "blink"
 
+/*
+ * 8 duty percent steps.
+ */
+#define RAMP_STEPS 8
+/*
+ * Each step will stay on for 50ms by default.
+ */
+#define RAMP_STEP_DURATION 50
+/*
+ * Each value represents a duty percent (0 - 100) for the led pwm.
+ */
+static int32_t BRIGHTNESS_RAMP[RAMP_STEPS] = {0, 12, 25, 37, 50, 72, 85, 100};
 
 /*
  * Write value to path and close file.
@@ -56,11 +71,7 @@ static void set(std::string path, std::string value) {
 static void set(std::string path, int value) {
     set(path, std::to_string(value));
 }
-
-static uint32_t is_lit(const LightState& state) {
-    return state.color & 0x00ffffff;
-}
-
+    
 static uint32_t rgbToBrightness(const LightState& state) {
     uint32_t color = state.color & 0x00ffffff;
     return ((77 * ((color >> 16) & 0xff)) + (150 * ((color >> 8) & 0xff)) +
@@ -72,15 +83,67 @@ static void handleBacklight(const LightState& state) {
     set(LCD_LED BRIGHTNESS, brightness);
 }
 
-static void handleNotification(const LightState& state) {
-    uint32_t Brightness;
+/*
+ * Scale each value of the brightness ramp according to the
+ * brightness of the color.
+ */
+static std::string getScaledRamp(uint32_t brightness) {
+    std::string ramp, pad;
 
-    if (is_lit(state))
-        Brightness = LED_LIGHT_ON;
-    else
-        Brightness = LED_LIGHT_OFF;
+    for (auto const& step : BRIGHTNESS_RAMP) {
+        int32_t scaledStep = (step * brightness) / 0xFF;
+        ramp += pad + std::to_string(scaledStep);
+        pad = ",";
+    }
+
+    return ramp;
+}
+
+static void handleNotification(const LightState& state) {
+    uint32_t alpha, brightness;
+
+    /*
+     * Extract brightness from AARRGGBB.
+     */
+    alpha = (state.color >> 24) & 0xFF;
+    brightness = rgbToBrightness(state);
+
+    /*
+     * Scale brightness if the Alpha brightness is not 0xFF.
+     */
+    if (alpha != 0xFF)
+        brightness = (brightness * alpha) / 0xFF;
     
-     set(CHARGING_LED BRIGHTNESS, Brightness);
+    /* Disable blinking. */
+    set(CHARGING_LED BLINK, 0);
+
+    if (state.flashMode == Flash::TIMED) {
+        /*
+         * If the flashOnMs duration is not long enough to fit ramping up
+         * and down at the default step duration, step duration is modified
+         * to fit.
+         */
+        int32_t stepDuration = RAMP_STEP_DURATION;
+        int32_t pauseHi = state.flashOnMs - (stepDuration * RAMP_STEPS * 2);
+        int32_t pauseLo = state.flashOffMs;
+
+        if (pauseHi < 0) {
+            stepDuration = state.flashOnMs / (RAMP_STEPS * 2);
+            pauseHi = 0;
+        }
+
+        /* Set LED */
+        set(CHARGING_LED START_IDX, 0 * RAMP_STEPS);
+        set(CHARGING_LED DUTY_PCTS, getScaledRamp(brightness));
+        set(CHARGING_LED PAUSE_LO, pauseLo);
+        set(CHARGING_LED PAUSE_HI, pauseHi);
+        set(CHARGING_LED RAMP_STEP_MS, stepDuration);
+
+        /* Enable blinking. */
+        set(CHARGING_LED BLINK, 1);
+    } else {
+        set(CHARGING_LED BRIGHTNESS, brightness);
+    }
 }
 
 static std::map<Type, std::function<void(const LightState&)>> lights = {
