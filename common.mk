@@ -108,7 +108,8 @@ PRODUCT_PACKAGES += \
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service
+    android.hardware.drm@1.0-service \
+    android.hardware.drm@1.1-service.clearkey
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -129,6 +130,8 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@1.1-service-qti \
     libgnss \
     libgnsspps \
+    libloc_api_v02 \
+    libloc_ds_api \
     libvehiclenetwork-native
 
 PRODUCT_PACKAGES += \
@@ -365,7 +368,7 @@ PRODUCT_PACKAGES += \
 
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.lineage.build.vendor_security_patch=2018-06-01
+    ro.lineage.build.vendor_security_patch=2018-08-05
 
 # Vibrator
 PRODUCT_PACKAGES += \
