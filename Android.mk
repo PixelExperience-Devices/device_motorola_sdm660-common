@@ -35,9 +35,61 @@ $(shell mkdir -p $(TARGET_OUT_VENDOR)/firmware; \
     ln -sf /dev/block/bootdevice/by-name/msadp \
         $(TARGET_OUT_VENDOR)/firmware/msadp)
 
-$(shell mkdir -p $(TARGET_OUT_VENDOR)/fsg)
+#A/B builds require us to create the mount points at compile time.
+#Just creating it for all cases since it does not hurt.
+FIRMWARE_MOUNT_POINT := $(TARGET_OUT_VENDOR)/firmware_mnt
+BT_FIRMWARE_MOUNT_POINT := $(TARGET_OUT_VENDOR)/bt_firmware
+DSP_MOUNT_POINT := $(TARGET_OUT_VENDOR)/dsp
+PERSIST_MOUNT_POINT := $(TARGET_ROOT_OUT)/persist
+FSG_MOUNT_POINT := $(TARGET_OUT_VENDOR)/fsg
 
-$(shell mkdir -p $(TARGET_OUT_VENDOR)/lib/dsp)
+ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_MOUNT_POINT) \
+	$(BT_FIRMWARE_MOUNT_POINT) \
+	$(DSP_MOUNT_POINT) \
+	$(PERSIST_MOUNT_POINT) \
+	$(FSG_MOUNT_POINT)
+
+$(FIRMWARE_MOUNT_POINT):
+	@echo "Creating $(FIRMWARE_MOUNT_POINT)"
+	@mkdir -p $(TARGET_OUT_VENDOR)/firmware_mnt
+ifneq ($(TARGET_MOUNT_POINTS_SYMLINKS),false)
+	@ln -sf /vendor/firmware_mnt $(TARGET_ROOT_OUT)/firmware
+endif
+
+$(BT_FIRMWARE_MOUNT_POINT):
+	@echo "Creating $(BT_FIRMWARE_MOUNT_POINT)"
+	@mkdir -p $(TARGET_OUT_VENDOR)/bt_firmware
+ifneq ($(TARGET_MOUNT_POINTS_SYMLINKS),false)
+	@ln -sf /vendor/bt_firmware $(TARGET_ROOT_OUT)/bt_firmware
+endif
+
+$(DSP_MOUNT_POINT):
+	@echo "Creating $(DSP_MOUNT_POINT)"
+	@mkdir -p $(TARGET_OUT_VENDOR)/dsp
+ifneq ($(TARGET_MOUNT_POINTS_SYMLINKS),false)
+	@ln -sf /vendor/dsp $(TARGET_ROOT_OUT)/dsp
+endif
+
+$(PERSIST_MOUNT_POINT):
+	@echo "Creating $(PERSIST_MOUNT_POINT)"
+ifneq ($(TARGET_MOUNT_POINTS_SYMLINKS),false)
+	@ln -sf /mnt/vendor/persist $(TARGET_ROOT_OUT)/persist
+endif
+
+$(FSG_MOUNT_POINT):
+	@echo "Creating $(FSG_MOUNT_POINT)"
+	@mkdir -p $(TARGET_OUT_VENDOR)/fsg
+ifneq ($(TARGET_MOUNT_POINTS_SYMLINKS),false)
+	@ln -sf /vendor/fsg $(TARGET_ROOT_OUT)/fsg
+endif
+
+DSP_SYMLINK := $(TARGET_OUT_VENDOR)/lib/dsp
+$(DSP_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating DSP folder symlink: $@"
+	@rm -rf $@
+	$(hide) ln -sf /vendor/dsp $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(DSP_SYMLINK)
 
 IMS_LIBS := libimscamera_jni.so libimsmedia_jni.so
 IMS_SYMLINKS := $(addprefix $(TARGET_OUT)/app/ims/lib/arm64/,$(notdir $(IMS_LIBS)))
