@@ -406,8 +406,7 @@ PRODUCT_PACKAGES += \
 # libstdc++: camera.sdm660
 PRODUCT_PACKAGES += \
     libstdc++.vendor \
-    libgui_vendor \
-    vndk_package
+    libgui_vendor
 
 PRODUCT_EXTRA_VNDK_VERSIONS := 30
 
