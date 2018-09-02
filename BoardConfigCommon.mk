@@ -178,8 +178,7 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Lineage hardware
-BOARD_HARDWARE_CLASS += \
-    $(PLATFORM_PATH)/lineagehw
+JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(PLATFORM_PATH)/lineagehw|**/*.java
 
 # NFC
 BOARD_NFC_CHIPSET := pn553
