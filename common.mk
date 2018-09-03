@@ -130,8 +130,6 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@1.1-service-qti \
     libgnss \
     libgnsspps \
-    libloc_api_v02 \
-    libloc_ds_api \
     libvehiclenetwork-native
 
 PRODUCT_PACKAGES += \
