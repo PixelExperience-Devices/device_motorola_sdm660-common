@@ -393,9 +393,6 @@ etc/permissions/com.motorola.moto.xml:vendor/etc/permissions/com.motorola.moto.x
 etc/permissions/com.motorola.motodisplay.xml:vendor/etc/permissions/com.motorola.motodisplay.xml
 etc/permissions/com.motorola.camera2.xml:vendor/etc/permissions/com.motorola.camera2.xml
 
-# NFC
-vendor/lib64/libpn553_fw.so
-
 # Offmode charging
 vendor/bin/charge_only_mode
 
