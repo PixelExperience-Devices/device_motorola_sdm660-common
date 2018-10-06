@@ -484,8 +484,10 @@ vendor/bin/port-bridge
 vendor/bin/qti
 vendor/bin/rmt_storage
 vendor/bin/tftp_server
+vendor/bin/hw/qcrild
 vendor/etc/data/dsi_config.xml
 vendor/etc/data/netmgr_config.xml
+vendor/etc/init/qcrild.rc
 vendor/lib/libmdmdetect.so
 vendor/lib/libpdmapper.so
 vendor/lib/libpdnotifier.so
@@ -549,6 +551,7 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so
 vendor/radio/qcril_database/qcril.db
+vendor/radio/qcril_database/upgrade/3_version_qcrildb.sql
 lib64/libnativehelper.so:vendor/lib64/libnativehelper.so
 lib/libnativehelper.so:vendor/lib/libnativehelper.so
 vendor/lib/libqsocket.so

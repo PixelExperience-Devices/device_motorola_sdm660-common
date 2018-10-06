@@ -141,7 +141,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.net.doxlat=true \
     persist.vendor.radio.rat_on=combine \
     persist.vendor.radio.sib16_support=1 \
-    rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     persist.rild.nitz_plmn="" \
     persist.rild.nitz_long_ons_0="" \
     persist.rild.nitz_long_ons_1="" \
