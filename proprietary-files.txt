@@ -558,6 +558,8 @@ vendor/lib/libqsocket.so
 vendor/lib64/libqsocket.so
 vendor/lib/libqrtr.so
 vendor/lib64/libqrtr.so
+vendor/lib/qcrild_librilutils.so
+vendor/lib64/qcrild_librilutils.so
 
 # Radio - IMS
 -app/ims/ims.apk|3806a916da8adc1e1787ec45a074a55968a0e752
