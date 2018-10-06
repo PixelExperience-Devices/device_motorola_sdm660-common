@@ -28,8 +28,9 @@
 #
 #
 
-while [ "$registered" != "true" ]
+while [ "$registeredvendor" != "true" ] && [ "$registered" != "true" ]
 do
     sleep 0.1
-    registered="`getprop vendor.sys.listeners.registered`"
+    registeredvendor="`getprop vendor.sys.listeners.registered`"
+    registered="`getprop sys.listeners.registered`"
 done
