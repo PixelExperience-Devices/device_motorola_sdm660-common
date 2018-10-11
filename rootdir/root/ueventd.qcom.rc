@@ -366,3 +366,6 @@ firmware_directories /vendor/firmware_mnt/image/
 
 # DTV
 /dev/isdbt     0660   oem_5019   oem_5019
+
+# Egistec fingerprint
+/dev/esfp0          0660   system     system
