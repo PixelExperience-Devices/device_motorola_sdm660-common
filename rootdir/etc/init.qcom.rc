@@ -75,8 +75,6 @@ on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
-    # Start HW service manager early
-    start hwservicemanager
     mount_all /vendor/etc/fstab.qcom --early
 
     chown root system /mnt/vendor/persist
