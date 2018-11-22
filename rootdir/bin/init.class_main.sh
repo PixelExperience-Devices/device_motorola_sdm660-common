@@ -38,10 +38,11 @@ vendor_rild_status=`getprop init.svc.vendor.ril-daemon`
 
 case "$baseband" in
     "apq" | "sda" | "qcs" )
-    setprop ro.radio.noril yes
+    setprop ro.vendor.radio.noril yes
     if [ -n "$rild_status" ] || [ -n "$vendor_rild_status" ]; then
       stop ril-daemon
       stop vendor.ril-daemon
+      start vendor.ipacm
     fi
 esac
 
@@ -83,17 +84,33 @@ case "$baseband" in
                     start vendor.ril-daemon
                 fi
             fi
+        # For older than JO 3.2 start ril-daemon
+        elif [ "$modem" = "JO" ]; then
+            version=`cat /vendor/firmware_mnt/verinfo/ver_info.txt |
+                    sed -n 's/^[^:]*modem[^:]*:[[:blank:]]*//p' |
+                    sed 's/.*JO.\(.*\)/\1/g' | cut -d \- -f 1`
+            if [ ! -z $version ]; then
+                if [ "$version" \< "3.2" ]; then
+                    # For OTA targets, ril-daemon will be defined and for new vendor.ril-daemon
+                    # To keep this script agnostic,start both of them as only valid one will start.
+                    start ril-daemon
+                    start vendor.ril-daemon
+                fi
+            fi
         else
             start ril-daemon
             start vendor.ril-daemon
         fi
+    else
+        start ril-daemon
+        start vendor.ril-daemon
     fi
 
     # Get ril-daemon status again to ensure that we have latest info
     rild_status=`getprop init.svc.ril-daemon`
     vendor_rild_status=`getprop init.svc.vendor.ril-daemon`
 
-    if [ -z "$rild_status" ] && [ -z "$vendor_rild_status" ]; then
+    if [[ -z "$rild_status" || "$rild_status" = "stopped" ]] && [[ -z "$vendor_rild_status" || "$vendor_rild_status" = "stopped" ]]; then
       start vendor.qcrild
     fi
     start vendor.ipacm-diag
@@ -114,13 +131,13 @@ case "$baseband" in
     multisim=`getprop persist.radio.multisim.config`
 
     if [ "$multisim" = "dsds" ] || [ "$multisim" = "dsda" ]; then
-        if [ -z "$rild_status" ] &&  [ -z "$vendor_rild_status" ]; then
+        if [[ -z "$rild_status" || "$rild_status" = "stopped" ]] && [[ -z "$vendor_rild_status" || "$vendor_rild_status" = "stopped" ]]; then
           start vendor.qcrild2
         else
           start vendor.ril-daemon2
         fi
     elif [ "$multisim" = "tsts" ]; then
-        if [ -z "$rild_status" ] && [ -z "$vendor_rild_status" ]; then
+        if [[ -z "$rild_status" || "$rild_status" = "stopped" ]] && [[ -z "$vendor_rild_status" || "$vendor_rild_status" = "stopped" ]]; then
           start vendor.qcrild2
           start vendor.qcrild3
         else
@@ -149,9 +166,9 @@ esac
 
 #
 # Allow persistent faking of bms
-# User needs to set fake bms charge in persist.bms.fake_batt_capacity
+# User needs to set fake bms charge in persist.vendor.bms.fake_batt_capacity
 #
-fake_batt_capacity=`getprop persist.bms.fake_batt_capacity`
+fake_batt_capacity=`getprop persist.vendor.bms.fake_batt_capacity`
 case "$fake_batt_capacity" in
     "") ;; #Do nothing here
     * )
