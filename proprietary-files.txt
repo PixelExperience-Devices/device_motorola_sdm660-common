@@ -167,7 +167,7 @@ vendor/lib64/libcpion.so
 # DSP
 vendor/lib/libsdsprpc.so
 vendor/lib64/libsdsprpc.so
-vendor/lib/rfsa/adsp/capi_v2_smartAmp_TAS25xx.so.1
+vendor/lib/rfsa/adsp/capi_v2_smartAmp_TAS25xx.so.1|2628036ee707002af06c6d3cc698c7df81671b58
 vendor/lib/rfsa/adsp/libadsp_fd_skel.so
 vendor/lib/rfsa/adsp/libadsp_hvx_add_constant.so
 vendor/lib/rfsa/adsp/libadsp_hvx_skel.so
@@ -179,7 +179,7 @@ vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
 vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libvpp_svc_skel.so
-vendor/lib/rfsa/adsp/tas2560_TI.bin
+vendor/lib/rfsa/adsp/tas2560_TI.bin|4f4e98934eac788768423c8fd4ec81c02ae9ce2b
 
 # DSP - SCVE
 vendor/lib/libscveBlobDescriptor.so
@@ -408,6 +408,7 @@ vendor/lib64/libvpplibrary.so
 # Moto Permissions
 etc/permissions/com.motorola.moto.xml:vendor/etc/permissions/com.motorola.moto.xml
 etc/permissions/com.motorola.motodisplay.xml:vendor/etc/permissions/com.motorola.motodisplay.xml
+vendor/etc/permissions/com.motorola.camera2.xml|6d77e9310c6647cda3c35f64097a14a1bda798d3
 
 # Offmode charging
 vendor/bin/charge_only_mode
@@ -424,13 +425,11 @@ vendor/bin/msm_irqbalance
 vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
 vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
 vendor/etc/perf/perfboostsconfig.xml
-vendor/lib/libfeedbackhandler.so
 vendor/lib/libperfgluelayer.so
 vendor/lib/libqti-perfd.so
 vendor/lib/libqti-perfd-client.so
 vendor/lib/libqti-util.so
 vendor/lib/vendor.qti.hardware.perf@1.0.so
-vendor/lib64/libfeedbackhandler.so
 vendor/lib64/libperfgluelayer.so
 vendor/lib64/libqti-perfd.so
 vendor/lib64/libqti-perfd-client.so
@@ -579,7 +578,6 @@ vendor/lib64/libqrtr.so
 vendor/lib/qcrild_librilutils.so
 vendor/lib64/qcrild_librilutils.so
 vendor/lib64/libadropbox.so
-vendor/lib64/libicuuc_vendor.so
 
 # Radio - IMS
 -app/ims/ims.apk|3806a916da8adc1e1787ec45a074a55968a0e752
