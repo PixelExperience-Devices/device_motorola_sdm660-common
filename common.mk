@@ -24,6 +24,10 @@
 
 $(call inherit-product, vendor/motorola/sdm660-common/sdm660-common-vendor.mk)
 
+#MotoMods
+USE_MOTO_AUDIOHAL := true
+$(call inherit-product-if-exists, vendor/motorola/mods/mods-vendor.mk)
+
 # Properties
 -include $(LOCAL_PATH)/vendor_prop.mk
 
