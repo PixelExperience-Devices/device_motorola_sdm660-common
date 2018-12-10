@@ -166,6 +166,9 @@ TARGET_FS_CONFIG_GEN += \
     $(PLATFORM_PATH)/config.fs \
     $(PLATFORM_PATH)/mot_aids.fs
 
+# IPA
+USE_DEVICE_SPECIFIC_DATA_IPA_CFG_MGR := true
+
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 service_locator.enable=1
