@@ -43,6 +43,7 @@ PRODUCT_PACKAGES += \
     audio.primary.sdm660 \
     audio.r_submix.default \
     audio.usb.default \
+    libaacwrapper \
     libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
@@ -374,6 +375,7 @@ PRODUCT_PACKAGES += \
     hostapd \
     hostapd_cli \
     libnl_2 \
+    libnl \
     libqsap_sdk \
     libQWiFiSoftApCfg \
     libwifi-hal-qcom \
@@ -383,3 +385,7 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf \
     wpa_supplicant_wcn.conf
+
+# Wi-Fi Display
+PRODUCT_BOOT_JARS += \
+    WfdCommon
