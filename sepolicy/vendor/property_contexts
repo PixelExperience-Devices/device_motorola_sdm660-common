@@ -1,1 +1,2 @@
 sys.post_boot.           u:object_r:post_boot_prop:s0
+persist.vendor.camera.debug.logfile    u:object_r:camera_prop:s0
