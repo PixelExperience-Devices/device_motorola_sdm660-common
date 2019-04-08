@@ -351,9 +351,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libtinyxml2
 
-# Update engine
-PRODUCT_PACKAGES += brillo_update_payload
-
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
