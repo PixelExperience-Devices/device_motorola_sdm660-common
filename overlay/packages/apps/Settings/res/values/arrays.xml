@@ -20,7 +20,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     
-    <string name="config_mms_user_agent_profile_url">http://uaprof.vtext.com/mot/motoz2/motoz2.xml</string>
+    <string name="config_mms_user_agent_profile_url">http://uaprof.motorola.com/phoneconfig/motox4/Profile/motox4.rdf</string>
 
 <!-- IDs for each color mode. The values must match the corresponding constants in
          android.view.Display -->
