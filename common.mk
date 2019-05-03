@@ -115,17 +115,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1
 
-# FM
-ifeq ($(filter beckham, $(TARGET_DEVICE)),true)
-    PRODUCT_PACKAGES += \
-        FM2 \
-        libqcomfm_jni \
-        init.qti.fm.sh \
-        qcom.fmradio
-
-    PRODUCT_BOOT_JARS += qcom.fmradio
-endif
-
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.1-impl-qti \
