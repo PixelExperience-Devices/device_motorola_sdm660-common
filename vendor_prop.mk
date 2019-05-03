@@ -175,6 +175,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.ims.disableQXDMLogs=1 \
     ro.vendor.build.vendorprefix=/vendor
 
+# SurfaceFlinger
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.protected_contents=true
+
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.wda.enable=true \
