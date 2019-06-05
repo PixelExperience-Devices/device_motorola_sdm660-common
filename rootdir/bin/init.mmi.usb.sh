@@ -181,6 +181,15 @@ case "$target" in
         setprop vendor.usb.rndis.func.name "gsi"
         setprop vendor.usb.rmnet.func.name "gsi"
     ;;
+    "talos")
+        qcom_usb_config="diag,serial_cdev,rmnet"
+        qcom_adb_usb_config="diag,serial_cdev,rmnet,adb"
+        bpt_usb_config="diag,serial,rmnet"
+        bpt_adb_usb_config="diag,serial,rmnet,adb"
+        setprop vendor.usb.controller "a600000.dwc3"
+        setprop vendor.usb.rndis.func.name "gsi"
+        setprop vendor.usb.rmnet.func.name "gsi"
+    ;;
 esac
 
 ## This is needed to switch to the qcom rndis driver.
