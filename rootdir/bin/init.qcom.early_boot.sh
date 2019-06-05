@@ -89,17 +89,6 @@ function set_density_by_fb() {
     fi
 }
 
-# set Lilliput LCD density for ADP
-product=`getprop ro.build.product`
-
-case "$product" in
-        "msmnile_au")
-         setprop vendor.display.lcd_density 160
-         ;;
-        *)
-        ;;
-esac
-
 target=`getprop ro.board.platform`
 case "$target" in
     "msm7630_surf" | "msm7630_1x" | "msm7630_fusion")
@@ -127,6 +116,26 @@ case "$target" in
             "Dragon")
                 setprop ro.sound.alsa "WM8903"
                 ;;
+        esac
+        ;;
+
+    "sm6150")
+        case "$soc_hwplatform" in
+            "ADP")
+                setprop vendor.display.lcd_density 160
+                ;;
+        esac
+        case "$soc_hwid" in
+            365|366)
+                sku_ver=`cat /sys/devices/platform/soc/aa00000.qcom,vidc1/sku_version` 2> /dev/null
+                if [ $sku_ver -eq 1 ]; then
+                    setprop vendor.media.sm7150.version 1
+                fi
+                ;;
+            355)
+                setprop vendor.media.sm6150.version 1
+                ;;
+            *)
         esac
         ;;
 
@@ -240,22 +249,27 @@ case "$target" in
         esac
         ;;
     "msm8937" | "msm8940")
-        # Set ro.opengles.version based on chip id.
+        # Set vendor.opengles.version based on chip id.
         # MSM8937 and MSM8940  variants supports OpenGLES 3.1
         # 196608 is decimal for 0x30000 to report version 3.0
         # 196609 is decimal for 0x30001 to report version 3.1
         # 196610 is decimal for 0x30002 to report version 3.2
         case "$soc_hwid" in
             294|295|296|297|298|313|353|354|363|364)
-                setprop ro.opengles.version 196610
+                setprop vendor.opengles.version 196610
+                if [ $soc_hwid = 354 ]
+                then
+                    setprop vendor.media.msm8937.version 1
+                    log -t BOOT -p i "SDM429 early_boot prop set for: HwID '$soc_hwid'"
+                fi
                 ;;
             303|307|308|309|320)
                 # Vulkan is not supported for 8917 variants
-                setprop ro.opengles.version 196608
+                setprop vendor.opengles.version 196608
                 setprop persist.graphics.vulkan.disable true
                 ;;
             *)
-                setprop ro.opengles.version 196608
+                setprop vendor.opengles.version 196608
                 ;;
         esac
         ;;
@@ -271,12 +285,6 @@ case "$target" in
             *)
                 setprop vendor.rild.libpath "/vendor/lib64/libril-qc-qmi-1.so"
                 setprop vendor.display.lcd_density 560
-                if [ ! -e /dev/kgsl-3d0 ]; then
-                    setprop persist.sys.force_sw_gles 1
-                    setprop vendor.display.idle_time 0
-                else
-                    setprop persist.sys.force_sw_gles 0
-                fi
                 ;;
         esac
         ;;
@@ -285,17 +293,8 @@ case "$target" in
             *)
                 if [ $fb_width -le 1600 ]; then
                     setprop vendor.display.lcd_density 560
-                    setprop dalvik.vm.heapgrowthlimit 256m
                 else
                     setprop vendor.display.lcd_density 640
-                    setprop dalvik.vm.heapgrowthlimit 512m
-                fi
-
-                if [ ! -e /dev/kgsl-3d0 ]; then
-                    setprop persist.sys.force_sw_gles 1
-                    setprop vendor.display.idle_time 0
-                else
-                    setprop persist.sys.force_sw_gles 0
                 fi
                 ;;
         esac
@@ -305,10 +304,8 @@ case "$target" in
             *)
                 if [ $fb_width -le 1600 ]; then
                     setprop vendor.display.lcd_density 560
-                    setprop dalvik.vm.heapgrowthlimit 256m
                 else
                     setprop vendor.display.lcd_density 640
-                    setprop dalvik.vm.heapgrowthlimit 512m
                 fi
                 ;;
         esac
@@ -321,7 +318,7 @@ case "$target" in
             # In SDM660 if modem version is greater than 3.1, need
             # to use the new vendor-ril which supports L+L feature
             # otherwise use the existing old one.
-            zygote=`getprop ro.zygote`
+            zygote=`getprop ro.vendor.zygote`
             case "$zygote" in
             "zygote64_32")
                 if [ "$modem" \< "3.1" ]; then
@@ -360,6 +357,26 @@ case "$target" in
                 ;;
         esac
         ;;
+    "msm8953")
+        cap_ver = 1
+                if [ -e "/sys/devices/platform/soc/1d00000.qcom,vidc/capability_version" ]; then
+                    cap_ver=`cat /sys/devices/platform/soc/1d00000.qcom,vidc/capability_version` 2> /dev/null
+                else
+                    cap_ver=`cat /sys/devices/soc/1d00000.qcom,vidc/capability_version` 2> /dev/null
+                fi
+
+                if [ $cap_ver -eq 1 ]; then
+                    setprop vendor.media.msm8953.version 1
+                fi
+                ;;
+    #Set property to differentiate SDM660 & SDM455
+    #SOC ID for SDM455 is 385
+    "sdm660")
+        case "$soc_hwid" in
+           385)
+               setprop vendor.media.sdm660.version 1
+        esac
+        ;;
 esac
 
 baseband=`getprop ro.baseband`
@@ -376,6 +393,33 @@ esac
 #property, it will not overwrite previous set
 #property if any target is setting forcefully.
 set_density_by_fb
+
+
+# set Lilliput LCD density for ADP
+product=`getprop ro.build.product`
+
+case "$product" in
+        "msmnile_au")
+         setprop vendor.display.lcd_density 160
+         echo 864000000 > /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/min_freq
+         echo 1612800000 > /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/max_freq
+         echo 864000000 > /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/min_freq
+         echo 1612800000 > /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/max_freq
+         ;;
+        *)
+        ;;
+esac
+case "$product" in
+        "msmnile_gvmq")
+         setprop vendor.display.lcd_density 160
+         echo 864000000 > /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/min_freq
+         echo 1612800000 > /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/max_freq
+         echo 864000000 > /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/min_freq
+         echo 1612800000 > /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/max_freq
+         ;;
+        *)
+        ;;
+esac
 
 # Setup display nodes & permissions
 # HDMI can be fb1 or fb2
@@ -484,8 +528,8 @@ else
     setprop ro.vendor.alarm_boot false
 fi
 
-# copy GPU frequencies to system property
+# copy GPU frequencies to vendor property
 if [ -f /sys/class/kgsl/kgsl-3d0/gpu_available_frequencies ]; then
     gpu_freq=`cat /sys/class/kgsl/kgsl-3d0/gpu_available_frequencies` 2> /dev/null
-    setprop ro.gpu.available_frequencies "$gpu_freq"
+    setprop vendor.gpu.available_frequencies "$gpu_freq"
 fi
