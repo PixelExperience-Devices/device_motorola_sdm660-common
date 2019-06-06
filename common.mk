@@ -179,7 +179,8 @@ PRODUCT_PACKAGES += \
     init.qti.qseecomd.sh \
     ueventd.qcom.rc \
     move_time_data.sh \
-    wlan_carrier_bin.sh
+    wlan_carrier_bin.sh \
+    init.safailnet.rc
 
 # IPACM
 PRODUCT_PACKAGES += \
@@ -324,13 +325,6 @@ PRODUCT_PACKAGES += \
 # Shims
 PRODUCT_PACKAGES += \
     libqsapshim
-
-# Telephony
-PRODUCT_PACKAGES += \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
 
 # Tethering
 PRODUCT_PROPERTY_OVERRIDES += \
