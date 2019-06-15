@@ -1,7 +1,7 @@
 [
   {
-    "repository": "android_kernel_motorola_msm8998",
-    "target_path": "kernel/motorola/msm8998"
+    "repository": "android_kernel_motorola_sdm660",
+    "target_path": "kernel/motorola/sdm660"
   },
   {
     "repository": "android_packages_resources_devicesettings",

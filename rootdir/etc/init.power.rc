@@ -26,123 +26,30 @@
 #
 
 on early-init
-    write /proc/sys/kernel/sched_boost 1
+    write /sys/block/mmcblk0/bdi/read_ahead_kb 512
 
 on init
-    # Disable UFS powersaving
-    write /sys/devices/soc/${ro.boot.bootdevice}/clkscale_enable 0
-    write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 0
-    write /sys/devices/soc/${ro.boot.bootdevice}/hibern8_on_idle_enable 0
-
-    write /sys/module/lpm_levels/parameters/sleep_disabled Y
-
     # Set up schedtune
-    write /dev/stune/foreground/schedtune.prefer_idle 1
-    write /dev/stune/top-app/schedtune.boost 10
-    write /dev/stune/top-app/schedtune.prefer_idle 1
+    write /dev/stune/foreground/schedtune.sched_boost_no_override 1
+    write /dev/stune/top-app/schedtune.sched_boost_no_override 1
+    write /dev/stune/schedtune.colocate 0
+    write /dev/stune/background/schedtune.colocate 0
+    write /dev/stune/system-background/schedtune.colocate 0
+    write /dev/stune/foreground/schedtune.colocate 0
+    write /dev/stune/top-app/schedtune.colocate 1
 
-    # disable thermal hotplug for configuration
-    write /sys/module/msm_thermal/core_control/enabled 0
-
-    # bring CPUs online
-    write /sys/devices/system/cpu/cpu0/online 1
-    write /sys/devices/system/cpu/cpu1/online 1
-    write /sys/devices/system/cpu/cpu2/online 1
-    write /sys/devices/system/cpu/cpu3/online 1
-    write /sys/devices/system/cpu/cpu4/online 1
-    write /sys/devices/system/cpu/cpu5/online 1
-    write /sys/devices/system/cpu/cpu6/online 1
-    write /sys/devices/system/cpu/cpu7/online 1
-
-    # Set up core_ctl
-    write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 2
-    write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres 60
-    write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres 30
-    write /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms 100
-    write /sys/devices/system/cpu/cpu4/core_ctl/is_big_cluster 1
-    write /sys/devices/system/cpu/cpu4/core_ctl/task_thres 4
-
-    # configure governor settings for little cluster
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
-    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us 20000
-
-    # configure governor settings for big cluster
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor "schedutil"
-    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us 20000
-
-    # enable thermal hotplug
-    write /sys/module/msm_thermal/core_control/enabled 1
-
-    # disable retention
-    write /sys/module/lpm_levels/system/pwr/cpu0/ret/idle_enabled N
-    write /sys/module/lpm_levels/system/pwr/cpu1/ret/idle_enabled N
-    write /sys/module/lpm_levels/system/pwr/cpu2/ret/idle_enabled N
-    write /sys/module/lpm_levels/system/pwr/cpu3/ret/idle_enabled N
-    write /sys/module/lpm_levels/system/perf/cpu4/ret/idle_enabled N
-    write /sys/module/lpm_levels/system/perf/cpu5/ret/idle_enabled N
-    write /sys/module/lpm_levels/system/perf/cpu6/ret/idle_enabled N
-    write /sys/module/lpm_levels/system/perf/cpu7/ret/idle_enabled N
-    write /sys/module/lpm_levels/system/pwr/pwr-l2-dynret/idle_enabled N
-    write /sys/module/lpm_levels/system/pwr/pwr-l2-ret/idle_enabled N
-    write /sys/module/lpm_levels/system/perf/perf-l2-dynret/idle_enabled N
-    write /sys/module/lpm_levels/system/perf/perf-l2-ret/idle_enabled N
-    write /sys/module/lpm_levels/parameters/sleep_disabled N
-
-    # create necessary cpusets
-    mkdir /dev/cpuset/camera-daemon 0750 cameraserver cameraserver
-    write /dev/cpuset/camera-daemon/cpus 0
-    write /dev/cpuset/camera-daemon/mems 0
-    chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
-    chmod 0660 /dev/cpuset/camera-daemon/tasks
-
-    start vendor.qcom-power
-
-on boot
-    # in FBE mode, /data is here
-    write /sys/block/sdb/queue/read_ahead_kb 512
-
-on late-fs
-    # Enable boot time fs tuning (ro like system is on sde/f, rw like userdata is on sdb)
-    write /sys/block/sdb/queue/iostats 0
-    write /sys/block/sdb/queue/nr_requests 256
-    write /sys/block/sdb/queue/read_ahead_kb 2048
-    write /sys/block/sdf/queue/iostats 0
-    write /sys/block/sdf/queue/nr_requests 256
-    write /sys/block/sdf/queue/read_ahead_kb 2048
-    write /sys/block/sde/queue/iostats 0
-    write /sys/block/sde/queue/nr_requests 256
-    write /sys/block/sda/queue/read_ahead_kb 2048
+on post-fs-data
+    # Set aggressive read ahead for dm-0 and dm-1 during boot up
+    write /sys/block/dm-0/queue/read_ahead_kb 2048
+    write /sys/block/dm-1/queue/read_ahead_kb 2048
 
 on property:sys.boot_completed=1
-    # Disable boot time fs tuning
-    write /sys/block/sdb/queue/read_ahead_kb 1024
-    write /sys/block/sdb/queue/nr_requests 128
-    write /sys/block/sdb/queue/iostats 1
-    write /sys/block/sdf/queue/read_ahead_kb 1024
-    write /sys/block/sdf/queue/nr_requests 128
-    write /sys/block/sdf/queue/iostats 1
-    write /sys/block/sde/queue/read_ahead_kb 1024
-    write /sys/block/sde/queue/nr_requests 128
-    write /sys/block/sde/queue/iostats 1
-
-    # Enable UFS powersaving
-    write /sys/devices/soc/${ro.boot.bootdevice}/clkscale_enable 1
-    write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 1
-    write /sys/devices/soc/${ro.boot.bootdevice}/hibern8_on_idle_enable 1
-
-    #Reset read ahead for dm-0 and dm-1 to 512kb
+    # Reset read ahead for dm-0 and dm-1 to 512kb
     write /sys/block/dm-0/queue/read_ahead_kb 512
     write /sys/block/dm-1/queue/read_ahead_kb 512
 
+    # Set IO scheduler to BFQ
     setprop sys.io.scheduler bfq
-
-    write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/foreground/cpus 0-3,6-7
-    write /dev/cpuset/background/cpus 0-1
-    write /dev/cpuset/system-background/cpus 0-3
-    write /dev/cpuset/camera-daemon/cpus 0-3
 
 on charger
     trigger early-fs
@@ -164,16 +71,6 @@ on moto-charger
     start vendor.gbmodinstall
     start vendor.charge_only_mode
     start vendor.thermal-com
-
-    # Enable UFS powersaving
-    write /sys/devices/soc/${ro.boot.bootdevice}/clkscale_enable 1
-    write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 1
-    write /sys/devices/soc/${ro.boot.bootdevice}/hibern8_on_idle_enable 1
-
-    write /sys/module/lpm_levels/parameters/sleep_disabled N
-
-    # disable thermal core control
-    write /sys/module/msm_thermal/core_control/enabled 0
 
     # online cpu 0 and set governor powersave
     write /sys/devices/system/cpu/cpu0/online 1
