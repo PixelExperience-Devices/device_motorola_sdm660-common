@@ -363,6 +363,10 @@ PRODUCT_PACKAGES += \
     libstdc++.vendor \
     vndk_package
 
+# Wallpapers
+PRODUCT_PACKAGES += \
+    WallpapersBReel2018
+
 # Weaver
 PRODUCT_PACKAGES += \
     android.hardware.weaver@1.0
