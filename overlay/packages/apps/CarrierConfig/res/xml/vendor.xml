@@ -3,7 +3,9 @@
     <carrier_config>
         <boolean name="world_phone_bool" value="true" />
     </carrier_config>
-
+    <carrier_config mcc="404" mnc="27">
+        <boolean name="carrier_volte_available_bool" value="true" />
+    </carrier_config>
     <carrier_config mcc="310" mnc="120">
         <boolean name="sprint_mwi_quirk" value="true" />
     </carrier_config>
