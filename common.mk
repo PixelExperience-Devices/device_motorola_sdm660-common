@@ -77,6 +77,9 @@ PRODUCT_PACKAGES += \
     libxml2 \
     Snap
 
+#GCAM
+$(call inherit-product, packages/apps/GoogleCameraMod/whyred/config.mk)
+
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapgrowthlimit=256m \
