@@ -7922,6 +7922,10 @@
         <boolean name="use_only_rsrp_for_lte_signal_bar_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="404" mnc="27">
+        <boolean name="s_config_enable_ut_bool" value="true" />
+        <boolean name="s_config_enable_ut_when_roaming_bool" value="true" />
+        <boolean name="s_config_enable_ut_when_data_off_bool" value="true" />
+        <boolean name="ignore_data_enabled_changed_for_video_calls" value="true" />
         <boolean name="s_display_volte_status_hints_bool" value="true" />
         <boolean name="s_show_volte_icon_in_status_bar_bool" value="true" />
         <boolean name="identify_high_definition_calls_in_call_log_bool" value="true" />
