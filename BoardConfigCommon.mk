@@ -228,9 +228,6 @@ include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy/private
 
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += $(PLATFORM_PATH)
-
 # Timeservice
 BOARD_USES_QC_TIME_SERVICES := true
 
