@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <carrier_config_list>
     <carrier_config>
+        <boolean name="support_enhanced_call_blocking_bool" value="true" />
         <boolean name="allow_video_call_in_low_battery" value="true" />
         <boolean name="default_carrierconfig_loaded" value="true" />
         <boolean name="show_ims_registration_status_bool" value="true" />
