@@ -218,7 +218,8 @@ TARGET_USES_OLD_MNC_FORMAT := true
 CUSTOM_APNS_FILE := $(PLATFORM_PATH)/configs/sprint_apns.xml
 
 # Root
-BOARD_ROOT_EXTRA_FOLDERS := persist
+BOARD_ROOT_EXTRA_SYMLINKS := \
+    /mnt/vendor/persist:/persist
 
 # Vendor Security Patch Level
 VENDOR_SECURITY_PATCH := 2019-03-01
