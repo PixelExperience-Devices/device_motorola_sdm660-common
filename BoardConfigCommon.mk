@@ -188,9 +188,6 @@ TARGET_KERNEL_SOURCE := kernel/motorola/msm8998
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
-# Lineage hardware
-JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(PLATFORM_PATH)/lineagehw|**/*.java
-
 # Partitions
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_FLASH_BLOCK_SIZE := 0x40000
