@@ -1,3 +1,2 @@
-type vl53l1_device, dev_type;
 type ab_block_device, dev_type;
 

@@ -9,8 +9,6 @@ genfscon sysfs /devices/soc/soc:qcom,memlat-cpu4                              u:
 genfscon sysfs /devices/soc/8c0000.qcom,msm-cam                               u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/virtual/graphics/fb0                                  u:object_r:sysfs_graphics:s0
 
-genfscon sysfs /module/stmvl53l1                                              u:object_r:sysfs_sensor:s0
-
 genfscon sysfs /devices/bt_wcn3990/rfkill/rfkill0/state                       u:object_r:sysfs_bluetooth_writable:s0
 genfscon sysfs /devices/bt_wcn3990/rfkill/rfkill0/type                        u:object_r:sysfs_bluetooth_writable:s0
 genfscon sysfs /devices/bt_wcn3990/extldo                                     u:object_r:sysfs_bluetooth_writable:s0

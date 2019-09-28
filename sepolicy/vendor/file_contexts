@@ -11,7 +11,6 @@
 
 /(vendor|system/vendor)/fsg  u:object_r:fsg_firmware_file:s0
 
-/dev/laser                   u:object_r:vl53l1_device:s0
 /dev/v4l2-hal-ctrl           u:object_r:video_device:s0
 /sys/devices/soc/8c0000\.qcom,msm-cam/video4linux/video0(/.*)? u:object_r:sysfs_graphics:s0
 /sys/devices/soc/caa0000\.qcom,jpeg/video4linux/video1(/.*)?   u:object_r:sysfs_graphics:s0
@@ -21,7 +20,6 @@
 /sys/devices/virtual/laser(/.*)?                              u:object_r:sysfs_sensor:s0
 /sys/devices/virtual/input/input4(/.*)?                       u:object_r:sysfs_sensor:s0
 
-/(vendor|system/vendor)/bin/vl53l1_daemon                     u:object_r:vl53l1_exec:s0
 /(vendor|system/vendor)/bin/init\.gbmods\.sh                    u:object_r:init-gbmods-sh_exec:s0
 /(vendor|system/vendor)/bin/mods_camd                         u:object_r:mods_exec:s0
 
