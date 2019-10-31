@@ -8,3 +8,5 @@ allow qti_init_shell vendor_radio_data_file:file getattr;
 allow qti_init_shell vendor_default_prop:property_service set;
 allow qti_init_shell gpu_prop:property_service set;
 allow qti_init_shell system_prop:property_service set;
+
+get_prop(qti_init_shell, moto_boot_prop)
