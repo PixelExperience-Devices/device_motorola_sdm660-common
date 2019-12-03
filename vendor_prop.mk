@@ -167,6 +167,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.telephony.default_network=10,10 \
     ro.vendor.use_data_netmgrd=true \
     telephony.lteOnCdmaDevice=1 \
+    ro.telephony.iwlan_operation_mode=legacy \
     persist.vendor.ims.disableDebugLogs=0 \
     persist.vendor.ims.disableIMSLogs=0 \
     persist.vendor.ims.disableDebugDataPathLogs=0 \

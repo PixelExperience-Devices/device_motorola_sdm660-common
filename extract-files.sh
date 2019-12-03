@@ -78,4 +78,8 @@ sed -i "s|/system/framework/qcrilhook.jar|/vendor/framework/qcrilhook.jar|g" "$Q
 TELESERVICELIB="$COMMON_BLOB_ROOT"/vendor/etc/permissions/telephonyservice.xml
 sed -i "s|/system/framework/QtiTelephonyServicelibrary.jar|/vendor/framework/QtiTelephonyServicelibrary.jar|g" "$TELESERVICELIB"
 
+# Fix xml version
+sed -i 's/xml version="2.0"/xml version="1.0"/' "$COMMON_BLOB_ROOT"/product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml
+sed -i 's/xml version="2.0"/xml version="1.0"/' "$COMMON_BLOB_ROOT"/product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml
+
 "$MY_DIR"/setup-makefiles.sh
