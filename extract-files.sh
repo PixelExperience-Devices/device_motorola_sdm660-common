@@ -70,14 +70,6 @@ COMMON_BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE_COMMON"/proprietary
 MDMCUTBACK="$COMMON_BLOB_ROOT"/vendor/lib64/libmdmcutback.so
 sed -i "s|libqsap_sdk.so|libqsapshim.so|g" "$MDMCUTBACK"
 
-# Correct qcrilhook library location
-QCRILHOOK="$COMMON_BLOB_ROOT"/vendor/etc/permissions/qcrilhook.xml
-sed -i "s|/system/framework/qcrilhook.jar|/vendor/framework/qcrilhook.jar|g" "$QCRILHOOK"
-
-# Correct QtiTelephonyServicelibrary location
-TELESERVICELIB="$COMMON_BLOB_ROOT"/vendor/etc/permissions/telephonyservice.xml
-sed -i "s|/system/framework/QtiTelephonyServicelibrary.jar|/vendor/framework/QtiTelephonyServicelibrary.jar|g" "$TELESERVICELIB"
-
 # Fix xml version
 sed -i 's/xml version="2.0"/xml version="1.0"/' "$COMMON_BLOB_ROOT"/product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml
 sed -i 's/xml version="2.0"/xml version="1.0"/' "$COMMON_BLOB_ROOT"/product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml
