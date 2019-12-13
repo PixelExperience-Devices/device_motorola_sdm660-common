@@ -405,6 +405,7 @@ vendor/etc/permissions/com.motorola.camera2.xml|6d77e9310c6647cda3c35f64097a14a1
 
 # Offmode charging
 vendor/bin/charge_only_mode
+vendor/bin/hvdcp_opti
 
 # Perf
 lib/libqti_performance.so
