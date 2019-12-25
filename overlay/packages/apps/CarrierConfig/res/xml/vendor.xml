@@ -105,6 +105,34 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="allow_one_way_accept_video_call" value="true"/>
     </carrier_config>
 
+    <carrier_config customerid="verizon" mcc="001">
+        <boolean name="carrier_volte_provisioning_required_bool" value="true" />
+        <boolean name="carrier_allow_turnoff_ims_bool" value="false" />
+        <boolean name="carrier_volte_tty_supported_bool" value="true" />
+        <boolean name="rtt_supported_bool" value="true" />
+        <boolean name="support_pause_ims_video_calls_bool" value="true" />
+        <boolean name="editable_wfc_mode_bool" value="false" />
+        <int name="carrier_default_wfc_ims_mode_int" value="1" />
+        <boolean name="editable_wfc_roaming_mode_bool" value="true" />
+        <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
+        <boolean name="allow_video_call_in_low_battery" value="true" />
+        <boolean name="carrier_allow_vce_bool" value="true" />
+        <boolean name="carrier_wfc_mdn_required_bool" value="true" />
+        <boolean name="downgrade_video_call_when_mobile_data_off" value="false" />
+        <boolean name="use_rcs_presence_bool" value="true" />
+        <boolean name="show_iccid_in_sim_status_bool" value="true" />
+    </carrier_config>
+
+    <carrier_config customerid="sprint" mcc="001">
+        <boolean name="carrier_volte_available_bool" value="false" />
+        <boolean name="carrier_vt_available_bool" value="false" />
+    </carrier_config>
+
+    <carrier_config carrierid="att" mcc="001">
+        <boolean name="editable_wfc_mode_bool" value="false" />
+        <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    </carrier_config>
+
     <carrier_config mcc="001" mnc="01">
         <boolean name="carrier_vt_available_bool" value="true" />
         <boolean name="ignore_data_enabled_changed_for_video_calls" value="true"/>
