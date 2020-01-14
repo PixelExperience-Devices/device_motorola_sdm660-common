@@ -46,6 +46,8 @@
 /data/.fps(/.*)?                                              u:object_r:fingerprint_data_file:s0
 /dev/esfp0                                                    u:object_r:tee_device:s0
 
+/data/vendor/misc/cutback(/.*)?                               u:object_r:vendor_radio_data_file:s0
+
 # Input devices
 /(vendor|system/vendor)/usr/idc(/.*)?                         u:object_r:idc_file:s0
 /(vendor|system/vendor)/usr/keylayout(/.*)?                   u:object_r:keylayout_file:s0
