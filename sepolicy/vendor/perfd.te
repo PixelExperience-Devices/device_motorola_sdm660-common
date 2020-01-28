@@ -12,7 +12,6 @@ allow perfd mediacodec:process signull;
 allow perfd hal_power_default:process signull;
 
 allow perfd cgroup:file rw_file_perms;
-get_prop(perfd, post_boot_prop)
 
 allow perfd proc:file rw_file_perms;
 allow perfd sysfs_scsi_host:file r_file_perms;
