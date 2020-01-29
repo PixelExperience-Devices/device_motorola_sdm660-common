@@ -15,3 +15,4 @@ allow rmt_storage vendor_radio_prop:file { getattr open read };
 allow rmt_storage mnt_vendor_file:dir search;
 
 get_prop(rmt_storage, moto_boot_prop)
+allow rmt_storage sysfs_data:file r_file_perms;

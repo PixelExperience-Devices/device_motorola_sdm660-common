@@ -1,1 +1,1 @@
-allow kernel debugfs_wlan:dir search;
+r_dir_file(kernel, debugfs_wlan)
