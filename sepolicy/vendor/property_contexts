@@ -1,4 +1,4 @@
-vendor.ril.radio.             u:object_r:vendor_radio_prop:s0
+vendor.ril.             u:object_r:vendor_radio_prop:s0
 
 ro.boot.adb_early          u:object_r:moto_boot_prop:s0
 ro.boot.secure_hardware    u:object_r:moto_boot_prop:s0
