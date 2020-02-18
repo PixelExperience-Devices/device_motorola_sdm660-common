@@ -1,0 +1,47 @@
+#
+# system_ext props for sdm660
+#
+
+# Audio
+audio.offload.disable=false
+ro.qc.sdk.audio.ssr=false
+
+# Bluetooth
+bt.max.hfpclient.connections=1
+vendor.bluetooth.soc=cherokee
+ro.bluetooth.a4wp=false
+
+# Camera
+vidc.enc.dcvs.extra-buff-count=2
+
+# Display
+ro.sf.hwc_set_default_colormode=true
+
+# Play store
+ro.com.google.clientidbase.am=android-motorola
+ro.com.google.clientidbase.gmm=android-motorola
+ro.com.google.clientidbase.ms=android-motorola
+ro.com.google.clientidbase.yt=android-motorola
+
+# Radio
+persist.data.netmgrd.qos.enable=true
+persist.radio.aosp_usr_pref_sel=true
+persist.radio.pb.min.match=7
+persist.radio.fi_supported=1
+persist.data.qmi.adb_logmask=0
+persist.radio.adb_log_on=0
+persist.net.doxlat=true
+persist.vendor.ims.dropset_feature=0
+persist.vendor.ims.disableDebugLogs=0
+persist.vendor.ims.disableIMSLogs=0
+persist.vendor.ims.disableDebugDataPathLogs=0
+persist.vendor.ims.disableADBLogs=0
+persist.vendor.ims.vt.enableadb=3
+persist.vendor.ims.disableQXDMLogs=1
+
+# Skia
+# (b/183612348): Enable skia reduceOpsTaskSplitting
+renderthread.skia.reduceopstasksplitting=true
+
+# Time daemon
+persist.vendor.delta_time.enable=true
