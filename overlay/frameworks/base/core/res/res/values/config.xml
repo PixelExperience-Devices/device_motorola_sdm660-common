@@ -480,7 +480,7 @@
     <string translatable="false" name="config_ntpServer">1.android.pool.ntp.org</string>
 
     <!-- True if the firmware supports connected MAC randomization -->
-    <bool name="config_wifi_connected_mac_randomization_supported">true</bool>
+    <bool name="config_wifi_connected_mac_randomization_supported">false</bool>
 
     <!-- True if the firmware supports Wi-Fi link probing -->
     <bool name="config_wifi_link_probing_supported">true</bool>
