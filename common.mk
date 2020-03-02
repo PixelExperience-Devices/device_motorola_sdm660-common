@@ -186,20 +186,21 @@ PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-im
 
 # Init
 PRODUCT_PACKAGES += \
-    init.mmi.ramdump.rc \
-    init.mmi.usb.rc \
-    init.mmi.usb.sh \
-    init.qcom.rc \
-    init.moto.rc \
-    init.power.rc \
     init.class_main.sh \
+    init.mmi.usb.sh \
+    init.qcom.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.sensors.sh \
-    init.qcom.sh \
-    init.qti.qseecomd.sh \
-    ueventd.qcom.rc \
     wlan_carrier_bin.sh
+
+PRODUCT_PACKAGES += \
+    init.mmi.ramdump.rc \
+    init.mmi.usb.rc \
+    init.moto.rc \
+    init.power.rc \
+    init.qcom.rc \
+    ueventd.qcom.rc
 
 # IPACM
 PRODUCT_PACKAGES += \
