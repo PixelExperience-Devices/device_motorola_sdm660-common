@@ -202,6 +202,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.data_con_rprt=true \
     persist.vendor.radio.add_power_save=1 \
     persist.net.doxlat=true \
+    vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     persist.rild.nitz_plmn="" \
     persist.rild.nitz_long_ons_0="" \
     persist.rild.nitz_long_ons_1="" \
