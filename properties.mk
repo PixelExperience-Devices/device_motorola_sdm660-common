@@ -1,5 +1,5 @@
 #
-# vendor props for sdm660
+# props for sdm660
 #
 
 # Audio
@@ -126,12 +126,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/platform/soc/c0c4000.sdhci/by-name/frp
 
 # Netflix
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.netflix.bsp_rev=Q660-13149-1
-
-# NFC
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.nfc.port=I2C
 
 # OMX
 # Rank OMX SW codecs lower than OMX HW codecs
@@ -179,20 +175,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.fi_supported=1 \
     persist.vendor.cne.rat.wlan.chip.oem=WCN \
     persist.vendor.sys.cnd.iwlan=1 \
-    persist.vendor.cne.feature=1 \
-    persist.vendor.dpm.feature=0 \
     persist.vendor.data.mode=concurrent \
     persist.data.netmgrd.qos.enable=true \
     persist.radio.aosp_usr_pref_sel=true \
     persist.radio.pb.min.match=7 \
     persist.radio.fi_supported=1 \
-    persist.radio.VT_CAM_INTERFACE=2 \
-    persist.radio.VT_ENABLE=1 \
-    persist.radio.VT_HYBRID_ENABLE=1 \
-    persist.radio.ROTATION_ENABLE=1 \
-    persist.radio.REVERSE_QMI=0 \
-    persist.radio.RATE_ADAPT_ENABLE=1 \
-    persist.radio.VT_USE_MDM_TIME=0 \
     persist.data.qmi.adb_logmask=0 \
     persist.radio.adb_log_on=0 \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
@@ -203,24 +190,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.add_power_save=1 \
     persist.net.doxlat=true \
     vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
-    persist.rild.nitz_plmn="" \
-    persist.rild.nitz_long_ons_0="" \
-    persist.rild.nitz_long_ons_1="" \
-    persist.rild.nitz_long_ons_2="" \
-    persist.rild.nitz_long_ons_3="" \
-    persist.rild.nitz_short_ons_0="" \
-    persist.rild.nitz_short_ons_1="" \
-    persist.rild.nitz_short_ons_2="" \
-    persist.rild.nitz_short_ons_3="" \
-    ril.subscription.types=NV,RUIM \
     persist.vendor.qc.sub.rdump.on=1 \
     persist.vendor.qc.sub.rdump.max=3 \
     ro.telephony.call_ring.multiple=false \
-    DEVICE_PROVISIONED=1 \
     ro.telephony.default_network=10,10 \
     ro.vendor.telephony.default_network=10,10 \
     ro.vendor.use_data_netmgrd=true \
-    telephony.lteOnCdmaDevice=1 \
     ro.telephony.iwlan_operation_mode=legacy \
     persist.vendor.ims.dropset_feature=0 \
     persist.vendor.ims.disableDebugLogs=0 \
@@ -230,6 +205,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.ims.vt.enableadb=3 \
     persist.vendor.ims.disableQXDMLogs=1 \
     ro.vendor.build.vendorprefix=/vendor
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    persist.vendor.cne.feature=1 \
+    persist.vendor.dpm.feature=0 \
+    DEVICE_PROVISIONED=1 \
+    ril.subscription.types=NV,RUIM \
+    telephony.lteOnCdmaDevice=1
 
 # SurfaceFlinger
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -247,20 +229,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.early_app_phase_offset_ns=1500000 \
     debug.sf.early_gl_phase_offset_ns=3000000 \
     debug.sf.early_gl_app_phase_offset_ns=15000000
-
-# RmNet Data
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.data.wda.enable=true \
-    persist.data.df.dl_mode=5 \
-    persist.data.df.ul_mode=5 \
-    persist.data.df.agg.dl_pkt=10 \
-    persist.data.df.agg.dl_size=4096 \
-    persist.data.df.mux_count=8 \
-    persist.data.df.iwlan_mux=9 \
-    persist.data.df.dev_name=rmnet_usb0 \
-    persist.data.iwlan.enable=true \
-    persist.rmnet.data.enable=true \
-    persist.rmnet.mux=enabled
 
 # Time daemon
 PRODUCT_PROPERTY_OVERRIDES += \
