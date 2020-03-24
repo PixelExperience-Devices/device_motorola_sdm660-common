@@ -4,3 +4,4 @@ com.fingerprints.extension::IFingerprintEngineering                             
 com.fingerprints.extension::IFingerprintNavigation                                u:object_r:fpc_extension_service:s0
 com.fingerprints.extension::IFingerprintSensorTest                                u:object_r:fpc_extension_service:s0
 vendor.egistec.hardware.fingerprint::IBiometricsFingerprintEts                    u:object_r:fpc_extension_service:s0
+vendor.dolby.hardware.dms::IDms                                            u:object_r:hal_dms_hwservice:s0
