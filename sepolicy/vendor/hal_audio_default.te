@@ -1,1 +1,4 @@
 unix_socket_connect(hal_audio_default, perfd, perfd)
+
+allow hal_audio_default hal_dms_default:binder { transfer call };
+allow hal_audio_default hal_dms_hwservice:hwservice_manager find;

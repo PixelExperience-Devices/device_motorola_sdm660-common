@@ -32,3 +32,4 @@ ro.vendor.zygote           u:object_r:moto_boot_prop:s0
 ro.vendor.fm.              u:object_r:vendor_fm_prop:s0
 
 persist.vendor.camera.     u:object_r:camera_prop:s0
+persist.vendor.dolby.loglevel   u:object_r:vendor_dolby_loglevel_prop:s0
