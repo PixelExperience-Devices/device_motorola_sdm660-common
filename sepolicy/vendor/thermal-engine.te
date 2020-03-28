@@ -1,5 +1,8 @@
 typeattribute thermal-engine data_between_core_and_vendor_violators;
 
+# Allow thermal-engine to read files in /sys
+r_dir_file(thermal-engine, sysfs)
+
 allow thermal-engine sysfs_healthd:dir search;
 allow thermal-engine sysfs_healthd:file rw_file_perms;
 
