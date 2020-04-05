@@ -98,7 +98,7 @@
             <Limit name="concurrent-instances" max="16" />
             <Limit name="performance-point-3840x2160" value="30" />
         </MediaCodec>
-        <MediaCodec name="OMX.qcom.video.decoder.avc.secure" type="video/avc" >
+        <!--MediaCodec name="OMX.qcom.video.decoder.avc.secure" type="video/avc" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
             <Limit name="size" min="64x64" max="4096x2160" />
@@ -110,7 +110,7 @@
             <Feature name="secure-playback" required="true" />
             <Limit name="concurrent-instances" max="6" />
             <Limit name="performance-point-3840x2160" value="30" />
-        </MediaCodec>
+        </MediaCodec-->
         <MediaCodec name="OMX.qcom.video.decoder.mpeg2" type="video/mpeg2" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
