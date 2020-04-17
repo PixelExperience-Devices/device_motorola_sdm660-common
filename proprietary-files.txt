@@ -1,3 +1,5 @@
+# Common proprietary files - from motorola/lake_retail/lake:10/QPW30.61-18/d18ed, unless pinned
+
 # ADSP
 vendor/bin/adsprpcd
 vendor/lib/libadsp_default_listener.so
