@@ -1,4 +1,3 @@
-import /init.recovery.qcom.usb.rc
 import /init.recovery.${ro.boot.device}.rc
 
 on fs
@@ -6,3 +5,6 @@ on fs
     symlink /dev/block/platform/soc/c0c4000.sdhci /dev/block/bootdevice
 
     setprop ro.build.system_root_image true
+
+on init
+    setprop sys.usb.configfs 1
