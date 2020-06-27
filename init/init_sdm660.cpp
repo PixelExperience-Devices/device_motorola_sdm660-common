@@ -52,6 +52,17 @@ char const *heapminfree;
 char const *heapmaxfree;
 char const *heaptargetutilization;
 
+void property_override(char const prop[], char const value[], bool add = true)
+{
+    prop_info *pi;
+
+    pi = (prop_info*) __system_property_find(prop);
+    if (pi)
+    __system_property_update(pi, value, strlen(value));
+    else if (add)
+    __system_property_add(prop, strlen(prop), value, strlen(value));
+}
+
 void check_device()
 {
     struct sysinfo sys;
@@ -95,6 +106,10 @@ void vendor_load_properties()
     property_set("dalvik.vm.heaptargetutilization", heaptargetutilization);
     property_set("dalvik.vm.heapminfree", heapminfree);
     property_set("dalvik.vm.heapmaxfree", heapmaxfree);
+
+    // Setting carrier prop
+    std::string carrier = GetProperty("ro.boot.carrier", "unknown");
+    property_override("ro.carrier", carrier.c_str());
 
     vendor_load_device_properties();
 }
