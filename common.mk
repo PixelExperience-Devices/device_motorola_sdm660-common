@@ -55,6 +55,12 @@ PRODUCT_PACKAGES += \
     libvolumelistener \
     tinymix
 
+ifneq ($(PREBUILT_AUDIOHAL), true)
+PRODUCT_PACKAGES += \
+    audio.primary.sdm660 \
+    libqcompostprocbundle
+endif # AUDIOHAL
+
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
