@@ -46,16 +46,20 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.2-service \
     audiod \
     audio.a2dp.default \
-    audio.primary.sdm660 \
     audio.r_submix.default \
     audio.usb.default \
     libaacwrapper \
     libaudio-resampler \
-    libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libvolumelistener \
     tinymix
+
+ifneq ($(PREBUILT_AUDIOHAL), true)
+PRODUCT_PACKAGES += \
+    audio.primary.sdm660 \
+    libqcompostprocbundle
+endif # AUDIOHAL
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
