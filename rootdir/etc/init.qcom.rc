@@ -831,9 +831,6 @@ on property:vold.decrypt=trigger_restart_framework
     start vendor.qcom-c_main-sh
     start vendor.wcnss-service
 
-on property:persist.env.fastdorm.enabled=true
-    setprop persist.radio.data_no_toggle 1
-
 service vendor.qrtr-ns /vendor/bin/qrtr-ns -f
     class core
     user vendor_qrtr
