@@ -687,9 +687,6 @@ on post-fs-data
     # Create directory for fm_radio
     mkdir /data/misc/fm_radio 0770 system system
 
-    # Create greybus firmware folder
-    mkdir /data/gbfirmware 0770 oem_5020 oem_5020
-
     # Create bug2go folder
     mkdir /data/vendor/bug2go 0770 log log
 
