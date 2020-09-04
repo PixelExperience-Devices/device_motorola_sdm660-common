@@ -19,24 +19,34 @@ package org.lineageos.settings.device;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.hardware.display.AmbientDisplayConfiguration;
 import android.os.UserHandle;
 import android.preference.PreferenceManager;
+import android.provider.Settings;
 
 import org.lineageos.settings.device.actions.UpdatedStateNotifier;
 import org.lineageos.settings.device.actions.CameraActivationAction;
 import org.lineageos.settings.device.actions.TorchAction;
 
+import static android.provider.Settings.Secure.DOZE_ALWAYS_ON;
+import static android.provider.Settings.Secure.DOZE_ENABLED;
+
 public class LineageActionsSettings {
     private static final String TAG = "LineageActions";
 
-    private static final String GESTURE_CAMERA_ACTION_KEY = "gesture_camera_action";
-    private static final String GESTURE_CHOP_CHOP_KEY = "gesture_chop_chop";
-    private static final String GESTURE_PICK_UP_KEY = "gesture_pick_up";
-    private static final String GESTURE_IR_WAKEUP_KEY = "gesture_hand_wave";
-    private static final String GESTURE_IR_SILENCER_KEY = "gesture_ir_silencer";
-    private static final String GESTURE_FLIP_TO_MUTE_KEY = "gesture_flip_to_mute";
-    private static final String GESTURE_LIFT_TO_SILENCE_KEY = "gesture_lift_to_silence";
+    protected static final String GESTURE_CAMERA_ACTION_KEY = "gesture_camera_action";
+    protected static final String GESTURE_CHOP_CHOP_KEY = "gesture_chop_chop";
+    protected static final String GESTURE_PICK_UP_KEY = "gesture_pick_up";
+    protected static final String GESTURE_IR_WAKEUP_KEY = "gesture_hand_wave";
+    protected static final String GESTURE_IR_SILENCER_KEY = "gesture_ir_silencer";
+    protected static final String GESTURE_FLIP_TO_MUTE_KEY = "gesture_flip_to_mute";
+    protected static final String GESTURE_LIFT_TO_SILENCE_KEY = "gesture_lift_to_silence";
+
+    protected static final String ALWAYS_ON_DISPLAY = "always_on_display";
+
+    protected static final String CATEG_PICKUP_SENSOR = "pickup_sensor";
+    protected static final String CATEG_PROX_SENSOR = "proximity_sensor";
 
     private final Context mContext;
     private final UpdatedStateNotifier mUpdatedStateNotifier;
@@ -65,28 +75,55 @@ public class LineageActionsSettings {
         return mChopChopEnabled;
     }
 
-    public static boolean isAODEnabled(Context context) {
-        return new AmbientDisplayConfiguration(context).alwaysOnEnabled(UserHandle.USER_CURRENT);
+    public static boolean isAlwaysOnEnabled(Context context) {
+        final boolean enabledByDefault = context.getResources()
+                .getBoolean(com.android.internal.R.bool.config_dozeAlwaysOnEnabled);
+
+        return Settings.Secure.getIntForUser(context.getContentResolver(),
+                DOZE_ALWAYS_ON, alwaysOnDisplayAvailable(context) && enabledByDefault ? 1 : 0,
+                UserHandle.USER_CURRENT) != 0;
+    }
+
+    public static boolean alwaysOnDisplayAvailable(Context context) {
+        return new AmbientDisplayConfiguration(context).alwaysOnAvailable();
+    }
+
+    public static boolean enableAlwaysOn(Context context, boolean enable) {
+        return Settings.Secure.putIntForUser(context.getContentResolver(),
+                DOZE_ALWAYS_ON, enable ? 1 : 0, UserHandle.USER_CURRENT);
+    }
+
+    public static boolean enableDoze(Context context, boolean enable) {
+        return Settings.Secure.putInt(context.getContentResolver(),
+                DOZE_ENABLED, enable ? 1 : 0);
     }
 
     public static boolean isDozeEnabled(Context context) {
-        return new AmbientDisplayConfiguration(context).pulseOnNotificationEnabled(UserHandle.USER_CURRENT);
-    }
-
-    public boolean isAODEnabled() {
-        return isAODEnabled(mContext);
+        return Settings.Secure.getInt(context.getContentResolver(),
+                DOZE_ENABLED, 1) != 0;
     }
 
     public boolean isDozeEnabled() {
         return isDozeEnabled(mContext);
     }
 
+    public static boolean getProxCheckBeforePulse(Context context) {
+        try {
+            Context con = context.createPackageContext("com.android.systemui", 0);
+            int id = con.getResources().getIdentifier("doze_proximity_check_before_pulse",
+                    "bool", "com.android.systemui");
+            return con.getResources().getBoolean(id);
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
+    }
+
     public boolean isIrWakeupEnabled() {
-        return isDozeEnabled() && !isAODEnabled() && mIrWakeUpEnabled;
+        return isDozeEnabled() && !isAlwaysOnEnabled(mContext) && mIrWakeUpEnabled;
     }
 
     public boolean isPickUpEnabled() {
-        return isDozeEnabled() && !isAODEnabled() && mPickUpGestureEnabled;
+        return isDozeEnabled() && !isAlwaysOnEnabled(mContext) && mPickUpGestureEnabled;
     }
 
     public boolean isIrSilencerEnabled() {
