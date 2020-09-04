@@ -34,5 +34,4 @@
     <bool name="profile_supported_sap">true</bool>
     <bool name="profile_supported_hid_device">true</bool>
     <bool name="profile_supported_hid_host">true</bool>
-    <bool name="profile_supported_ba">true</bool>
 </resources>
