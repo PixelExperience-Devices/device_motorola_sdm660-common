@@ -20,6 +20,7 @@ ro.vendor.hw.radio         u:object_r:moto_boot_prop:s0
 ro.vendor.hw.hwrev         u:object_r:moto_boot_prop:s0
 ro.vendor.hw.revision      u:object_r:moto_boot_prop:s0
 ro.vendor.boot.radio       u:object_r:moto_boot_prop:s0
+ro.vendor.bootreason    u:object_r:moto_boot_prop:s0
 ro.vendor.boot.hwrev       u:object_r:moto_boot_prop:s0
 ro.vendor.boot.powerup_reason   u:object_r:moto_boot_prop:s0
 ro.vendor.boot.bl_state    u:object_r:moto_boot_prop:s0
@@ -28,6 +29,7 @@ ro.vendor.carrier          u:object_r:moto_boot_prop:s0
 ro.vendor.boot.cid         u:object_r:moto_boot_prop:s0
 ro.vendor.fsg-id           u:object_r:moto_boot_prop:s0
 ro.vendor.zygote           u:object_r:moto_boot_prop:s0
+vendor.boot_completed      u:object_r:moto_boot_prop:s0
 
 ro.vendor.fm.              u:object_r:vendor_fm_prop:s0
 
