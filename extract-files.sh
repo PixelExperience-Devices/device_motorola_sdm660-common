@@ -70,6 +70,11 @@ fi
 function blob_fixup() {
     case "${1}" in
 
+    # memset shim
+    vendor/bin/charge_only_mode)
+        patchelf --add-needed libmemset_shim.so "${2}"
+        ;;
+
     # Load wrapped shim
     vendor/lib64/libmdmcutback.so)
         sed -i "s|libqsap_sdk.so|libqsapshim.so|g" "${2}"
