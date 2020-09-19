@@ -96,53 +96,8 @@ on fs
     mkdir /mnt/vendor/persist/bms 0700 root system
     chown root root /mnt/vendor/persist/captouch_basedata.bin
     chmod 0770 /mnt/vendor/persist/captouch_basedata.bin
-    mkdir /mnt/vendor/persist/coresight 0770 root root
-    mkdir /mnt/vendor/persist/public/locale 0700 system system
     # Reloading context for NPI uses /mnt/vendor/persist
-    exec u:r:vendor_toolbox:s0 system -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/alarm -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 vendor_mot_pwric -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/batt_health -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 bluetooth -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/bluetooth -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 root system -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/bms -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 vendor_mot_tcmd bluetooth -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/bt -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 root -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/cache -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 vendor_mot_tcmd -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/camera -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 root -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/captouch_basedata.bin -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 system -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/chargeonly -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 root -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/coresight -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 system -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/data -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 system graphics -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/display -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 system -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/drm -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 system -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/egis -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 system vendor_mot_tcmd -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/factory -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 vendor_rfs vendor_rfs_shared -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/hlos_rfs -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 root system -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/hvdcp_opti -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 system -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/iar_db -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 root -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/lost+found -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 radio -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/mdm -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 system -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/misc -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 vendor_mot_tcmd -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/paks -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 system -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/properties -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 radio root shell system vendor_mot_accy vendor_mot_atvc vendor_mot_tcmd -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/public/att_dm -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 radio root shell system vendor_mot_accy vendor_mot_atvc vendor_mot_tcmd -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/public/atvc -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 radio root shell system vendor_mot_accy vendor_mot_atvc vendor_mot_tcmd -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/public/battd -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 radio root shell system vendor_mot_accy vendor_mot_atvc vendor_mot_tcmd -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/public/hiddenmenu -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 system -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/public/locale -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 radio root shell system vendor_mot_accy vendor_mot_atvc vendor_mot_tcmd -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/public/oma -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 radio root shell system vendor_mot_accy vendor_mot_atvc vendor_mot_tcmd -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/public/omadm -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 radio root shell system vendor_mot_accy vendor_mot_atvc vendor_mot_tcmd -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/public/svcs -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 radio root shell system vendor_mot_accy vendor_mot_atvc vendor_mot_tcmd -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/public/usc_dm -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 system -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/qti_fp -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 vendor_rfs -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/rfs -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 root -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/sds -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 system -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/secnvm -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 drmrpc vendor_mot_tcmd -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/security -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 system -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/sensors -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 system -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/time -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 media -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/vpp -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 vendor_mot_tcmd -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/wifi -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 vendor_mot_drm -- /vendor/bin/toybox_vendor find /mnt/vendor/persist/wmdrm -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 root system -- /vendor/bin/toybox_vendor echo /mnt/vendor/persist -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
-    exec u:r:vendor_toolbox:s0 root root -- /vendor/bin/toybox_vendor restorecon -RF /mnt/vendor/persist
+    restorecon_recursive /mnt/vendor/persist
 
 on late-fs
     # Start services for bootanim
