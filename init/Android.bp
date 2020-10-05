@@ -25,5 +25,8 @@ motorola_sdm660_init_library_static {
         "system/core/base/include",
         "system/core/init",
         "device/motorola/sdm660-common"
+    ],
+    shared_libs: [
+        "libbase",
     ]
 }
