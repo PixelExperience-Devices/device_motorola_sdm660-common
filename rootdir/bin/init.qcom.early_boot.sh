@@ -349,7 +349,6 @@ case "$target" in
                     setprop vendor.rild.libpath "/vendor/lib64/libril-qc-qmi-1.so"
                 else
                     setprop vendor.rild.libpath "/vendor/lib64/libril-qc-hal-qmi.so"
-                    setprop ro.boot.product.hardware.sku qcril
                 fi
                 ;;
             "zygote32")
@@ -357,7 +356,6 @@ case "$target" in
                     setprop vendor.rild.libpath "/vendor/lib/libril-qc-qmi-1.so"
                 else
                     setprop vendor.rild.libpath "/vendor/lib/libril-qc-hal-qmi.so"
-                    setprop ro.boot.product.hardware.sku qcril
                 fi
                 ;;
             esac
