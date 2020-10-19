@@ -16,6 +16,7 @@ allow vendor_toolbox {
     fingerprint_data_file
     mnt_vendor_file
     persist_alarm_file
+    persist_audio_file
     persist_block_device
     persist_bluetooth_file
     persist_bms_file
@@ -43,6 +44,7 @@ allow vendor_toolbox {
 allow vendor_toolbox {
     fingerprint_data_file
     mnt_vendor_file
+    persist_bluetooth_file
     persist_camera_file
     persist_drm_file
     persist_mdm_file
