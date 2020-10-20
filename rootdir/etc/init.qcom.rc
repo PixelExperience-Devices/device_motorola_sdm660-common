@@ -206,7 +206,6 @@ on early-boot
     write /sys/devices/virtual/cvp/cvp/boot 1
     exec u:r:qti_init_shell:s0 -- /vendor/bin/init.qcom.early_boot.sh
     write /sys/module/subsystem_restart/parameters/disable_restart_work 0x0
-    write /proc/sys/kernel/poweroff_cmd "/system/bin/reboot -p"
 
     # for backward compatibility
     chown system system /persist/sensors
@@ -513,13 +512,6 @@ on post-fs-data
     # Create the directories used by CnE subsystem
     mkdir /data/vendor/connectivity 0771 radio radio
     chown radio radio /data/vendor/connectivity
-
-    # Create the directories used by DPM subsystem
-    mkdir /data/dpm 0771 system system
-    chown system system /data/dpm
-
-    mkdir /data/dpm/nsrm 0771 system system
-    chown system system /data/dpm/nsrm
 
     # Create directory used by audio subsystem
     mkdir /data/vendor/audio 0770 audio audio
@@ -1038,7 +1030,7 @@ service vendor.qcom-sh /vendor/bin/init.qcom.sh
     user root
     group root system radio
     oneshot
-	
+
 service vendor.class_main-sh /vendor/bin/init.class_main.sh
     class main
     user root
