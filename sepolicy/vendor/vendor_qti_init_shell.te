@@ -14,3 +14,6 @@ dontaudit vendor_qti_init_shell default_prop:property_service set;
 
 # Silence DAC denials
 dontaudit vendor_qti_init_shell self:capability { dac_override dac_read_search };
+
+allow qti_init_shell ctl_start_prop:property_service set;
+allow qti_init_shell ctl_stop_prop:property_service set;
