@@ -72,12 +72,12 @@ function blob_fixup() {
 
     # Load wrapped shim
     vendor/lib64/libmdmcutback.so)
-        sed -i "s|libqsap_sdk.so|libqsapshim.so|g" "$MDMCUTBACK" "${2}"
+        sed -i "s|libqsap_sdk.so|libqsapshim.so|g" "${2}"
         ;;
 
     # Fix xml version
     product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml | product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
-        sed -i 's/xml version="2.0"/xml version="1.0"/' "${2}"
+        sed -i 's|xml version="2.0"|xml version="1.0"|g' "${2}"
         ;;
 
     esac
