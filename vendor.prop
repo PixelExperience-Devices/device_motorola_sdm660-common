@@ -199,3 +199,6 @@ ro.hw_timeout_multiplier=3
 
 # Wifi
 wifi.interface=wlan0
+
+# Zygote
+zygote.critical_window.minute=10
