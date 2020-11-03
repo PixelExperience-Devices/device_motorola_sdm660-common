@@ -43,6 +43,7 @@
 /sys/devices/soc/0.et320(/.*)?                                u:object_r:sysfs_fingerprint:s0
 /(mnt/vendor)/persist/egis(/.*)?                              u:object_r:fingerprint_data_file:s0
 /dev/esfp0                                                    u:object_r:tee_device:s0
+/data/\.fps(/.*)?                                             u:object_r:system_fps_data_file:s0
 /data/vendor/misc/cutback(/.*)?                               u:object_r:vendor_radio_data_file:s0
 /data/vendor/fpc(/.*)?                                        u:object_r:fingerprint_data_file:s0
 /data/vendor/fpc/socket                                       u:object_r:fingerprint_socket:s0
