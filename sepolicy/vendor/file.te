@@ -11,6 +11,7 @@ type fingerprint_socket, data_file_type, file_type;
 type sysfs_hwmon, sysfs_type, fs_type;
 type sysfs_sensor, sysfs_type, fs_type;
 type sysfs_wifi, sysfs_type, fs_type;
+type system_fps_data_file, file_type, data_file_type, core_data_file_type;
 
 # charge_only_mode
 type chargeonly_data_file, file_type, data_file_type;
