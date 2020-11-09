@@ -292,8 +292,6 @@ on boot
 
     setprop wifi.interface wlan0
 
-    setprop ro.telephony.call_ring.multiple false
-
     #enable camera read sensors data
     setprop persist.camera.gyro.disable 0
 
