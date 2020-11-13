@@ -61,7 +61,6 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 
 # Camera
 USE_CAMERA_STUB := true
-TARGET_USES_QTI_CAMERA_DEVICE := true
 
 # Display
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
