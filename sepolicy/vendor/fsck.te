@@ -1,1 +1,2 @@
 allow fsck modem_block_device:blk_file rw_file_perms;
+dontaudit fsck self:capability { dac_override dac_read_search };
