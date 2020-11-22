@@ -1,26 +1,20 @@
 [
   {
-    "repository"  : "packages_apps_PixelLiveWallpaper",
-    "target_path" : "packages/apps/PixelLiveWallpaper",
-    "branch"      : "ten",
-    "remote"      : "pixel-gitlab"
-  },
-  {
     "repository"  : "vendor_motorola_sdm660-common",
     "target_path" : "vendor/motorola/sdm660-common",
-    "branch"      : "ten",
+    "branch"      : "eleven",
     "remote"      : "pixel-devices-blobs"
   },
   {
     "remote"      : "github",
     "repository"  : "LineageOS/android_external_bson",
     "target_path" : "external/bson",
-    "branch"      : "lineage-17.1"
+    "branch"      : "lineage-18.0"
   },
   {
     "remote"      : "github",
     "repository"  : "LineageOS/android_system_qcom",
     "target_path" : "system/qcom",
-    "branch"      : "lineage-17.1"
+    "branch"      : "lineage-18.0"
   }
 ]
