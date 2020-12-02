@@ -5,3 +5,6 @@ com.fingerprints.extension::IFingerprintNavigation                              
 com.fingerprints.extension::IFingerprintSensorTest                                u:object_r:fpc_extension_service:s0
 vendor.egistec.hardware.fingerprint::IBiometricsFingerprintEts                    u:object_r:fpc_extension_service:s0
 vendor.dolby.hardware.dms::IDms                                            u:object_r:hal_dms_hwservice:s0
+
+vendor.nxp.nxpese::INxpEse                                                        u:object_r:nxpese_hwservice:s0
+vendor.nxp.nxpnfc::INxpNfc                                                        u:object_r:nxpnfc_hwservice:s0
