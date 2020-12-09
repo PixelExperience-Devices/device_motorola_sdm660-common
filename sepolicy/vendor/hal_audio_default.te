@@ -1,5 +1,7 @@
 unix_socket_connect(hal_audio_default, perfd, perfd)
 
+allow hal_audio_default persist_audio_file:dir rw_dir_perms;
+allow hal_audio_default persist_audio_file:file create_file_perms;
 allow hal_audio_default sysfs:dir { open read };
 allow hal_audio_default hal_dms_default:binder { transfer call };
 allow hal_audio_default hal_dms_hwservice:hwservice_manager find;
