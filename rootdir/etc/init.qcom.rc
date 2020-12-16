@@ -91,8 +91,7 @@ on init
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
-
-    mount_all /vendor/etc/fstab.qcom --early
+    mount_all /vendor/etc/fstab.qcom
 
     chown root system /mnt/vendor/persist
     chmod 0771 /mnt/vendor/persist
@@ -102,23 +101,6 @@ on fs
     chmod 0770 /mnt/vendor/persist/captouch_basedata.bin
     # Reloading context for NPI uses /mnt/vendor/persist
     restorecon_recursive /mnt/vendor/persist
-
-on late-fs
-    # Start services for bootanim
-    start servicemanager
-    start surfaceflinger
-    start bootanim
-
-    start vendor.configstore-hal
-    start vendor.gralloc-2-0
-
-    # Wait for hwservicemanager ready since fsck might be triggered in mount_all --late
-    # In such case, init won't responce the property_set from hwservicemanager and then
-    # cause services for bootanim not running.
-    wait_for_prop hwservicemanager.ready true
-
-    # Mount RW partitions which need run fsck
-    mount_all /vendor/etc/fstab.qcom --late
 
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
