@@ -20,3 +20,5 @@ allow rild cutback_data_file:sock_file { write unlink };
 allow rild cutback_socket:sock_file { ioctl read write create getattr setattr lock append map unlink rename open };
 
 allow rild input_device:chr_file { ioctl open read };
+
+binder_call(rild, qtidataservices_app)
