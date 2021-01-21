@@ -1,0 +1,5 @@
+# Acquire advisory lock on /system/etc/xtables.lock. If this file doesn't
+# exist, suppress the denial.
+dontaudit netd system_data_file:dir write;
+dontaudit netd system_data_file:file write;
+
