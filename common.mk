@@ -120,10 +120,10 @@ PRODUCT_PACKAGES += \
     gralloc.sdm660 \
     hwcomposer.sdm660 \
     memtrack.sdm660 \
-    libdisplayconfig \
+    libdisplayconfig.qti.vendor \
     libgenlock \
     liboverlay \
-    libqdMetaData.system \
+    libqdMetaData \
     libvulkan \
     libtinyxml
 
