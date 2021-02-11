@@ -71,12 +71,15 @@ function blob_fixup() {
             ;;
         # Fix missing symbols
         vendor/lib64/libril-qc-hal-qmi.so)
-            "${PATCHELF}" --add-needed "libcutils_shim.so" "${2}"
+            for  LIBCUTILS_SHIM in $(grep -L "libcutils_shim.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libcutils_shim.so" "$LIBCUTILS_SHIM"
+            done
             ;;
-
         # memset shim
         vendor/bin/charge_only_mode)
-             "${PATCHELF}" --add-needed libmemset_shim.so "${2}"
+            for  LIBMEMSET_SHIM in $(grep -L "libmemset_shim.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libmemset_shim.so" "$LIBMEMSET_SHIM"
+            done
             ;;
     esac
 }
