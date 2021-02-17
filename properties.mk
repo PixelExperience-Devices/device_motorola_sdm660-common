@@ -228,6 +228,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ril.subscription.types=NV,RUIM \
     telephony.lteOnCdmaDevice=1
 
+# Sensors
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.sensors.smd=false
+
 # SD Card Encryption
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.crypto.volume.contents_mode=ice \
