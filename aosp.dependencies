@@ -4,5 +4,11 @@
     "target_path" : "vendor/motorola/sdm660-common",
     "branch"      : "eleven",
     "remote"      : "pixel-devices-blobs"
+  },
+  {
+    "repository"  : "hardware_motorola",
+    "target_path" : "hardware/motorola",
+    "branch"      : "eleven",
+    "remote"      : "pixel-devices"
   }
 ]
