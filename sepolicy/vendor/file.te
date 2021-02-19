@@ -1,3 +1,7 @@
+# ADSPD
+type adspd_socket, file_type, mlstrustedobject;
+type sysfs_adspd, fs_type, sysfs_type;
+
 type debugfs_rmts, debugfs_type, fs_type;
 type debugfs_wlan, debugfs_type, fs_type;
 type fsg_firmware_file, file_type, contextmount_type, vendor_file_type;

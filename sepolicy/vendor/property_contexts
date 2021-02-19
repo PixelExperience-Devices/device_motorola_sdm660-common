@@ -31,7 +31,7 @@ vendor.boot_completed      u:object_r:moto_boot_prop:s0
 
 ro.vendor.hw.hwrev         u:object_r:hwrev_prop:s0
 ro.vendor.boot.hwrev       u:object_r:hwrev_prop:s0
-
+vendor.hw.aov.             u:object_r:vendor_aov_prop:s0
 ro.vendor.fm.              u:object_r:vendor_fm_prop:s0
 
 persist.vendor.camera.     u:object_r:camera_prop:s0
