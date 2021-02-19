@@ -5,3 +5,5 @@ allow hal_audio_default persist_audio_file:file create_file_perms;
 allow hal_audio_default sysfs:dir { open read };
 allow hal_audio_default hal_dms_default:binder { transfer call };
 allow hal_audio_default hal_dms_hwservice:hwservice_manager find;
+
+r_dir_file(hal_audio_server, sysfs_input)

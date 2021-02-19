@@ -10,6 +10,7 @@ type sysfs_fingerprint, sysfs_type, fs_type;
 type fingerprint_data_file, data_file_type, file_type;
 type fingerprint_socket, data_file_type, file_type;
 type sysfs_hwmon, sysfs_type, fs_type;
+type sysfs_input, sysfs_type, fs_type;
 type sysfs_sensor, sysfs_type, fs_type;
 type sysfs_wifi, sysfs_type, fs_type;
 type system_fps_data_file, file_type, data_file_type, core_data_file_type;

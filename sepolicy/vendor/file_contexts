@@ -59,6 +59,9 @@
 /(vendor|system/vendor)/usr/idc(/.*)?                         u:object_r:vendor_idc_file:s0
 /(vendor|system/vendor)/usr/keylayout(/.*)?                   u:object_r:vendor_keylayout_file:s0
 
+/sys/devices/soc/soc:gpio_keys/input/input5/capabilities/sw   u:object_r:sysfs_input:s0
+/sys/devices/virtual/input(/.*)?                              u:object_r:sysfs_input:s0
+
 /(vendor|system/vendor)/bin/wlan_carrier_bin\.sh            u:object_r:init_wifi_exec:s0
 
 # Charger
