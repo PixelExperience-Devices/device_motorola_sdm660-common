@@ -18,6 +18,9 @@
 /(vendor|system/vendor)/lib(64)?/motorola\.hardware\.audio\.adspd@1\.0\.so            u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/motorola\.hardware\.audio\.adspd@1\.0_vendor\.so     u:object_r:same_process_hal_file:s0
 
+# libmcf
+/vendor/lib(64)?/libmcf-qc-fd-offline\.so                        u:object_r:same_process_hal_file:s0
+
 # Persist
 /(mnt/vendor/persist|persist)(/*)?                               u:object_r:mnt_vendor_file:s0
 /(mnt/vendor/persist|persist)/camera(/.*)?                       u:object_r:persist_camera_file:s0
