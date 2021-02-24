@@ -12,7 +12,7 @@ ro.charger.enable_suspend=true
 DEVICE_PROVISIONED=1
 persist.vendor.cne.feature=1
 persist.vendor.dpm.feature=0
-ril.subscription.types=NV,RUIM
+ril.subscription.types=RUIM
 telephony.lteOnCdmaDevice=1
 
 # Netflix
