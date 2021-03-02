@@ -35,10 +35,10 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@6.0-impl \
-    android.hardware.audio.effect@6.0-impl \
-    android.hardware.audio.service \
-    android.hardware.soundtrigger@2.2-impl \
+    android.hardware.audio@6.0-impl_32 \
+    android.hardware.audio.effect@6.0-impl_32 \
+    android.hardware.audio.service_32 \
+    android.hardware.soundtrigger@2.2-impl_32 \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
