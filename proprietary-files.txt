@@ -1,4 +1,4 @@
-# Common proprietary files - from motorola/lake_retail/lake:10/QPW30.61-18/d18ed, unless pinned
+# Common proprietary files - from motorola/lake_retail/lake:10/QPWS30.61-21-18-7/fac4a:user/release-keys, unless pinned
 
 # ADSP
 vendor/bin/adsprpcd
@@ -389,8 +389,8 @@ vendor/lib64/libOmxQcelp13Dec.so
 vendor/lib64/libOmxWmaDec.so
 
 # Moto Permissions
-system/etc/permissions/com.motorola.moto.xml:vendor/etc/permissions/com.motorola.moto.xml
-system/etc/permissions/com.motorola.motodisplay.xml:vendor/etc/permissions/com.motorola.motodisplay.xml
+system/etc/permissions/com.motorola.moto.xml:vendor/etc/permissions/com.motorola.moto.xml|ae00f0eb4b1e134e0f6f25586ec70f6faa00a528
+product/etc/permissions/com.motorola.motodisplay.xml
 vendor/etc/permissions/com.motorola.camera2.xml|6d77e9310c6647cda3c35f64097a14a1bda798d3
 
 # Offmode charging
