@@ -886,9 +886,6 @@ service vendor.sensors.qti /vendor/bin/sensors.qti
     group system
     disabled
 
-on property:sys.sysctl.tcp_adv_win_scale=*
-    write /proc/sys/net/ipv4/tcp_adv_win_scale ${sys.sysctl.tcp_adv_win_scale}
-
 service vendor.wigignpt /vendor/bin/wigignpt
     class hal
     socket wigig/wigignpt stream 660 system wifi
