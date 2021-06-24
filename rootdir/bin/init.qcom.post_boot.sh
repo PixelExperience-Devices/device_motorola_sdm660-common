@@ -512,7 +512,7 @@ else
 
         # Enable adaptive LMK for all targets &
         # use Google default LMK series for all 64-bit targets >=2GB.
-        echo 0 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
+        echo 1 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
 
         # Enable oom_reaper
         if [ -f /sys/module/lowmemorykiller/parameters/oom_reaper ]; then
@@ -536,7 +536,7 @@ else
           *)
             #Set PPR parameters for all other targets.
             echo $set_almk_ppr_adj > /sys/module/process_reclaim/parameters/min_score_adj
-            echo 0 > /sys/module/process_reclaim/parameters/enable_process_reclaim
+            echo 1 > /sys/module/process_reclaim/parameters/enable_process_reclaim
             echo 50 > /sys/module/process_reclaim/parameters/pressure_min
             echo 70 > /sys/module/process_reclaim/parameters/pressure_max
             echo 30 > /sys/module/process_reclaim/parameters/swap_opt_eff
@@ -2779,7 +2779,7 @@ case "$target" in
                 adj_1="${adj_series#*,}"
                 almk_ppr_adj="${adj_1%%,*}"
                 almk_ppr_adj=$(((almk_ppr_adj * 6) + 6))
-                echo 0 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
+                echo 1 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
                 echo 80 > /sys/module/vmpressure/parameters/allocstall_threshold
                 echo $almk_ppr_adj > /sys/module/lowmemorykiller/parameters/adj_max_shift
                 echo 81250 > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
