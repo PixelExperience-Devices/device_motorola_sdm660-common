@@ -1,0 +1,4 @@
+r_dir_file(fsck_untrusted, sysfs_dm)
+
+# /data/media
+allow fsck_untrusted media_rw_data_file:dir getattr;
