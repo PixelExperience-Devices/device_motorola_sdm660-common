@@ -1,1 +1,2 @@
 allow sensors moto_boot_prop:file { getattr open read };
+dontaudit sensors diag_device:chr_file rw_file_perms;

@@ -22,3 +22,4 @@ allow rild cutback_socket:sock_file { ioctl read write create getattr setattr lo
 allow rild input_device:chr_file { ioctl open read };
 
 binder_call(rild, qtidataservices_app)
+dontaudit rild diag_device:chr_file rw_file_perms;
