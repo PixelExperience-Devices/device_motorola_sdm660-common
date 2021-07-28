@@ -359,9 +359,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    net.tethering.noprovisioning=true
-
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.1-service.sdm660
