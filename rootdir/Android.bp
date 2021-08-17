@@ -1,0 +1,90 @@
+// Device init scripts
+
+prebuilt_etc {
+    name: "fstab.qcom",
+    src: "etc/fstab.qcom",
+    soc_specific: true,
+}
+
+prebuilt_etc {
+    name: "init.mmi.ramdump.rc",
+    src: "etc/init.mmi.ramdump.rc",
+    sub_dir: "init/hw",
+    soc_specific: true,
+}
+
+prebuilt_etc {
+    name: "init.mmi.usb.rc",
+    src: "etc/init.mmi.usb.rc",
+    sub_dir: "init/hw",
+    soc_specific: true,
+}
+
+prebuilt_etc {
+    name: "init.qcom.rc",
+    src: "etc/init.qcom.rc",
+    sub_dir: "init/hw",
+    soc_specific: true,
+}
+
+prebuilt_etc {
+    name: "init.moto.rc",
+    src: "etc/init.moto.rc",
+    sub_dir: "init/hw",
+    soc_specific: true,
+}
+
+prebuilt_etc {
+    name: "init.power.rc",
+    src: "etc/init.power.rc",
+    sub_dir: "init/hw",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.class_main.sh",
+    src: "bin/init.class_main.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.mmi.usb.sh",
+    src: "bin/init.mmi.usb.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.qcom.early_boot.sh",
+    src: "bin/init.qcom.early_boot.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.qcom.post_boot.sh",
+    src: "bin/init.qcom.post_boot.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.qcom.sensors.sh",
+    src: "bin/init.qcom.sensors.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.qcom.sh",
+    src: "bin/init.qcom.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.qti.qseecomd.sh",
+    src: "bin/init.qti.qseecomd.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "wlan_carrier_bin.sh",
+    src: "bin/wlan_carrier_bin.sh",
+    soc_specific: true,
+}
