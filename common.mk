@@ -416,7 +416,3 @@ PRODUCT_PACKAGES += \
     WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf \
-
-# Wi-Fi Display
-PRODUCT_PACKAGES += \
-    libmediaextractorservice
