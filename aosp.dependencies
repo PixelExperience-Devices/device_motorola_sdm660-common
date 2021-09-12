@@ -15,6 +15,6 @@
     "repository"  : "hardware_motorola",
     "target_path" : "hardware/motorola",
     "branch"      : "eleven",
-    "remote"      : "pixel-devices"
+    "remote"      : "pixel"
   }
 ]
