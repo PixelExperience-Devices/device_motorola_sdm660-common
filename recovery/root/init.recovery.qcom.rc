@@ -1,5 +1,4 @@
 import /init.recovery.qcom.usb.rc
-import /init.recovery.${ro.boot.device}.rc
 
 on fs
     wait /dev/block/platform/soc/c0c4000.sdhci
