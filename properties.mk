@@ -191,7 +191,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.procedure_bytes=SKIP \
     persist.vendor.radio.aosp_usr_pref_sel=true \
     persist.vendor.radio.flexmap_type=none \
-    persist.vendor.radio.data_con_rprt=true \
     persist.vendor.radio.add_power_save=1 \
     persist.net.doxlat=true \
     vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
