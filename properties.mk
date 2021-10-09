@@ -209,6 +209,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.ims.disableADBLogs=0 \
     persist.vendor.ims.vt.enableadb=3 \
     persist.vendor.ims.disableQXDMLogs=1 \
+    persist.sys.fflag.override.settings_provider_model=false \
     ro.vendor.build.vendorprefix=/vendor
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
