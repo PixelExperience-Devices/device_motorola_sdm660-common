@@ -222,6 +222,11 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ril.subscription.types=NV,RUIM \
     telephony.lteOnCdmaDevice=1
 
+# SD Card Encryption
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.crypto.volume.contents_mode=ice \
+    ro.crypto.volume.filenames_mode=aes-256-cts \
+
 # Skia
 # (b/183612348): Enable skia reduceOpsTaskSplitting
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
