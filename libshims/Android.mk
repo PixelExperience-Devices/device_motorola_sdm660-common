@@ -31,3 +31,10 @@ LOCAL_MODULE := libcutils_shim
 LOCAL_MODULE_TAGS := optional
 LOCAL_VENDOR_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libshims_camera
+LOCAL_MODULE_TAGS := optional
+LOCAL_SRC_FILES := camera_shim.cpp
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_SHARED_LIBRARY)

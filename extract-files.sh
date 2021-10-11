@@ -81,6 +81,38 @@ function blob_fixup() {
                 "${PATCHELF}" --add-needed "libmemset_shim.so" "$LIBMEMSET_SHIM"
             done
             ;;
+
+        # Fix missing symbols
+        vendor/lib/libmot_gpu_mapper.so)
+            for  CAMERA_SHIM in $(grep -L "libshims_camera.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libshims_camera.so" "$CAMERA_SHIM"
+            done
+            ;;
+
+        product/lib/lib-imscamera.so)
+            for  CAMERA_SHIM in $(grep -L "libshims_camera.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libshims_camera.so" "$CAMERA_SHIM"
+            done
+            ;;
+
+        product/lib/lib-imsvideocodec.so)
+            for  CAMERA_SHIM in $(grep -L "libshims_camera.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libshims_camera.so" "$CAMERA_SHIM"
+            done
+            ;;
+
+        product/lib64/lib-imscamera.so)
+            for  CAMERA_SHIM in $(grep -L "libshims_camera.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libshims_camera.so" "$CAMERA_SHIM"
+            done
+            ;;
+
+        product/lib64/lib-imsvideocodec.so)
+            for  CAMERA_SHIM in $(grep -L "libshims_camera.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libshims_camera.so" "$CAMERA_SHIM"
+            done
+            ;;
+
     esac
 }
 
