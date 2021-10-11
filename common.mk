@@ -73,6 +73,7 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0 \
+    android.hardware.bluetooth@1.0.vendor \
     audio.bluetooth.default \
     android.hardware.bluetooth.audio@2.0-impl \
     libbt-vendor \
@@ -109,6 +110,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
 # Display
 PRODUCT_PACKAGES += \
+    android.frameworks.displayservice@1.0.vendor \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-service \
@@ -132,7 +134,11 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1
+    android.hardware.biometrics.fingerprint@2.1.vendor
+
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0.vendor
 
 # GPS
 PRODUCT_PACKAGES += \
