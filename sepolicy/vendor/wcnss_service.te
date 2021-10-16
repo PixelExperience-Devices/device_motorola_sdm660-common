@@ -1,2 +1,3 @@
 get_prop(wcnss_service, moto_boot_prop)
 dontaudit wcnss_service diag_device:chr_file rw_file_perms;
+dontaudit wcnss_service system_prop:file read;
