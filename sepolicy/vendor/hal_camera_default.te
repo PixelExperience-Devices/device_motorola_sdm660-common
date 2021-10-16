@@ -9,3 +9,7 @@ allow hal_camera_default sysfs_healthd:dir search;
 get_prop(hal_camera_default, moto_boot_prop)
 set_prop(hal_camera_default, camera_prop)
 set_prop(hal_camera_default, vendor_video_prop)
+get_prop(hal_camera_default, bootanim_system_prop)
+get_prop(hal_camera_default, camera_prop)
+dontaudit hal_camera_default persist_debug_prop:file read;
+dontaudit hal_camera_default radio_prop:file read;
