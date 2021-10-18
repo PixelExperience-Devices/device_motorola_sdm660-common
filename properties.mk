@@ -245,6 +245,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.early_gl_phase_offset_ns=3000000 \
     debug.sf.early_gl_app_phase_offset_ns=15000000
 
+# System
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.binary_xml=false
+
 # Time daemon
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.delta_time.enable=true
