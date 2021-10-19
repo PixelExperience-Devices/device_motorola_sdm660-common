@@ -120,6 +120,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.enable_hwc_vds=0 \
     debug.sf.enable_gl_backpressure=1 \
     debug.sf.hw=1 \
+    debug.sf.latch_unsignaled=1 \
     vendor.gralloc.enable_fb_ubwc=1 \
     debug.sf.disable_backpressure=1 \
     dev.pm.dyn_samplingrate=1 \
