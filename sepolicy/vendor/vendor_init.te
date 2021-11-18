@@ -19,3 +19,5 @@ set_prop(vendor_init, camera_prop)
 
 allow vendor_init media_rw_data_file:file getattr;
 allow vendor_init system_fps_data_file:dir create_dir_perms;
+
+allow vendor_init persist_debug_prop:file read;
