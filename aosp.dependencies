@@ -2,19 +2,19 @@
   {
     "repository"  : "kernel_motorola_msm8998",
     "target_path" : "kernel/motorola/msm8998",
-    "branch"      : "eleven",
+    "branch"      : "twelve",
     "remote"      : "pixel-devices"
   },
   {
     "repository"  : "vendor_motorola_sdm660-common",
     "target_path" : "vendor/motorola/sdm660-common",
-    "branch"      : "eleven",
+    "branch"      : "twelve",
     "remote"      : "pixel-devices-blobs"
   },
   {
     "repository"  : "hardware_motorola",
     "target_path" : "hardware/motorola",
-    "branch"      : "eleven",
+    "branch"      : "twelve",
     "remote"      : "pixel"
   }
 ]
