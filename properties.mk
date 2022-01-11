@@ -117,7 +117,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.hwc_set_default_colormode=true \
-    debug.renderengine.backend=threaded \
+    debug.renderengine.backend=skiaglthreaded \
     debug.sf.enable_hwc_vds=0 \
     debug.sf.enable_egl_image_tracker=true \
     debug.sf.enable_gl_backpressure=1 \
