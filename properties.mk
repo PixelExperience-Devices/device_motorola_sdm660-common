@@ -117,6 +117,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.hwc_set_default_colormode=true \
+    ro.surface_flinger.enable_layer_caching=true \
     debug.renderengine.backend=skiaglthreaded \
     debug.sf.enable_hwc_vds=0 \
     debug.sf.enable_egl_image_tracker=true \
