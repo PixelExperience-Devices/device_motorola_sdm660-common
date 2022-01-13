@@ -124,6 +124,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.enable_gl_backpressure=1 \
     debug.sf.hw=1 \
     debug.sf.latch_unsignaled=1 \
+    debug.sf.layer_caching_active_layer_timeout_ms=1000 \
     debug.sf.recomputecrop=0 \
     vendor.gralloc.enable_fb_ubwc=1 \
     debug.sf.disable_backpressure=1 \
