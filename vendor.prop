@@ -188,5 +188,8 @@ debug.sf.early_gl_app_phase_offset_ns=15000000
 # USB
 persist.sys.usb.config.extra=none
 
+# Watchdog
+ro.hw_timeout_multiplier=3
+
 # Wifi
 wifi.interface=wlan0
