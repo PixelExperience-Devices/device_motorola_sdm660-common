@@ -63,7 +63,6 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 USE_CAMERA_STUB := true
 
 # Display
-OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 TARGET_USES_ION := true
 TARGET_USES_HWC2 := true
 TARGET_USES_GRALLOC1 := true
