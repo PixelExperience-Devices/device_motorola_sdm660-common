@@ -132,7 +132,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610 \
     ro.vendor.display.cabl=0 \
     ro.hardware.egl=adreno \
-    ro.hardware.vulkan=sdm660
+    ro.hardware.vulkan=sdm660 \
+    vendor.display.disable_scaler=1
 
 # Factory reset partition
 PRODUCT_PROPERTY_OVERRIDES += \
