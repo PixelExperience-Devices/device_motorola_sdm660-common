@@ -720,14 +720,13 @@ vendor/lib/libsensor_reg.so
 vendor/lib/libsensor1.so
 vendor/lib/sensor_calibrate.so
 vendor/lib/sensors.rp.so
-vendor/lib/sensors.ssc.so
+vendor/lib/sensors.ssc.so|6a7c2d2810b2e1ccf21ed3093b73abdfde1ca335
 vendor/lib64/libsensor1.so
 vendor/lib64/sensors.rp.so
 vendor/lib64/libsensor_reg.so
 vendor/lib64/libsensor1.so
 vendor/lib64/sensor_calibrate.so
-vendor/lib64/sensors.rp.so
-vendor/lib64/sensors.ssc.so
+vendor/lib64/sensors.ssc.so|19238bd20078d92e6fc0c2dbc82386b044f6395d
 
 # Thermal
 vendor/bin/thermal-engine
