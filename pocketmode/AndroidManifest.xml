@@ -24,18 +24,15 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="lineageos.permission.HARDWARE_ABSTRACTION_ACCESS" />
 
-    <uses-sdk
-        android:minSdkVersion="27"
-        android:targetSdkVersion="27" />
-
     <application
         android:label="MotoPocketMode"
         android:persistent="true"
         android:defaultToDeviceProtectedStorage="true"
         android:directBootAware="true">
 
-        <receiver android:name=".BootCompletedReceiver" >
-            <intent-filter android:priority="99" >
+        <receiver android:name=".BootCompletedReceiver"
+                  android:exported="false">
+            <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="lineageos.intent.action.INITIALIZE_LINEAGE_HARDWARE" />
                 <category android:name="android.intent.category.DEFAULT" />
