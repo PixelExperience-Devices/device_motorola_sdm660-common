@@ -38,7 +38,6 @@ on init
     setprop ro.vendor.boot.serialno ${ro.boot.serialno}
     setprop ro.vendor.zygote ${ro.zygote}
     setprop ro.vendor.hw.fps true
-    setprop ro.product.manufacturer Motorola
     setprop ro.vendor.hw.hwrev 99999
     setprop ro.vendor.boot.hwrev 99999
 
