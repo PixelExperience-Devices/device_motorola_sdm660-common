@@ -16,5 +16,11 @@
     "target_path" : "hardware/motorola",
     "branch"      : "twelve",
     "remote"      : "pixel"
+  },
+  {
+    "repository": "system_qcom",
+    "target_path": "system/qcom",
+    "branch": "twelve",
+    "remote": "pixel"
   }
 ]
