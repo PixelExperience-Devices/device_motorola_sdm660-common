@@ -1,0 +1,2 @@
+allow vold system_server:process getattr;
+allow vold vdc:process getattr;
