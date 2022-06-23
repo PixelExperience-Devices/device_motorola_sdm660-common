@@ -320,6 +320,10 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+# PocketMode
+PRODUCT_PACKAGES += \
+    MotoPocketMode
+    
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2.vendor \
