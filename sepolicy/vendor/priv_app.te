@@ -1,1 +1,3 @@
 get_prop(priv_app, hwrev_prop)
+dontaudit priv_app sysfs_android_usb:file open;
+dontaudit priv_app gmscore_app:file read;

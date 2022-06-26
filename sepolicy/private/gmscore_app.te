@@ -1,0 +1,1 @@
+dontaudit gmscore_app priv_app:file read;
