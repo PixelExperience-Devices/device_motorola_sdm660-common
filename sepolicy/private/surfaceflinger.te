@@ -9,3 +9,5 @@ allow surfaceflinger bootanim:file read;
 allow surfaceflinger system_app:process getattr;
 allow surfaceflinger gmscore_app:process getattr;
 allow surfaceflinger bootanim:file open;
+allow surfaceflinger bootanim:process getattr;
+allow surfaceflinger mediaserver:process getattr;
