@@ -34,5 +34,6 @@ allow system_server mediaserver:process getattr;
 allow system_server system_suspend:process getattr;
 allow system_server isolated_app:process getattr;
 allow system_server untrusted_app_25:process getattr;
+allow system_server keystore:process getattr;
 
 get_prop(system_server, vendor_persist_camera_prop)
