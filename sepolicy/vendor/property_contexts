@@ -53,7 +53,6 @@ persist.enable.max.pending.buf u:object_r:camera_prop:s0
 persist.partial.skip u:object_r:camera_prop:s0
 ro.camera. u:object_r:camera_prop:s0
 ro.product.nopefacturer u:object_r:camera_prop:s0
-vendor.camera.skip_unconfigure.packagelist u:object_r:camera_prop:s0
 pdaf.camif.dump.en u:object_r:camera_prop:s0
 pdaf.tune.enable u:object_r:camera_prop:s0
 pdaf.camif.roi u:object_r:camera_prop:s0
