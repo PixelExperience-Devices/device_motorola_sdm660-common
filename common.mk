@@ -35,6 +35,9 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-pe
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
+PRODUCT_PACKAGES += \
+    NfcOverlay
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
