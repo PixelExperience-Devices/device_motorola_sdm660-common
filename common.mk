@@ -196,7 +196,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     init.mmi.ramdump.rc \
-    init.mmi.usb.rc \
     init.moto.rc \
     init.power.rc \
     init.qcom.rc \
@@ -396,7 +395,11 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service
+    android.hardware.usb@1.0-service \
+    init.qcom.usb.rc \
+    init.qcom.usb.sh
+
+PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/usb/etc
 
 # Vibrator
 PRODUCT_PACKAGES += \
