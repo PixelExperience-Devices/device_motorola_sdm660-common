@@ -6,6 +6,7 @@ allow thermal-engine sysfs_healthd:file rw_file_perms;
 
 allow thermal-engine self:capability { chown fowner };
 
+get_prop(thermal-engine, vendor_radio_prop)
 get_prop(thermal-engine, moto_boot_prop)
 allow thermal-engine { proc_stat proc_loadavg }:file r_file_perms;
 
