@@ -93,8 +93,8 @@ debug.media.codec2=2
 vendor.display.enable_default_color_mode=1
 
 # Display
-debug.renderengine.backend=threaded
 debug.sf.disable_client_composition_cache=1
+debug.renderengine.backend=skiaglthreaded
 debug.sf.hw=1
 debug.sf.latch_unsignaled=0
 vendor.gralloc.enable_fb_ubwc=1
