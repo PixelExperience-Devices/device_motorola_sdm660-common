@@ -18,5 +18,4 @@
 
 # Removeable
 /devices/*/xhci-hcd.*.auto/usb*          auto               auto   defaults                                         voldmanaged=usb:auto
-/devices/soc/c084000.sdhci/mmc_host*     auto               auto   defaults                                         wait,voldmanaged=sdcard1:auto,encryptable=userdata
-
+/devices/soc/c084000.sdhci/mmc_host*     auto               auto   defaults                                         wait,voldmanaged=sdcard1:auto
