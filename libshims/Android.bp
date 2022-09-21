@@ -1,18 +1,20 @@
+// Memset
 cc_library {
-    name: "libmemset_shim",
+    name: "libgui_shim",
+    shared_libs: [
+        "libgui",
+        "libutils",
+    ],
+    srcs: ["gui_shim.cpp"],
+    system_ext_specific: true,
+}
+
+cc_library {
+    name: "libgui_shim_vendor",
+    shared_libs: [
+        "libgui_vendor",
+        "libutils",
+    ],
+    srcs: ["gui_shim.cpp"],
     vendor: true,
-    target: {
-        android_arm: {
-            srcs: ["memset32.S"],
-            sanitize: {
-                misc_undefined: ["integer"],
-            },
-        },
-        android_arm64: {
-            srcs: ["android_memset.S"],
-            sanitize: {
-                misc_undefined: ["integer"],
-            },
-        },
-    },
 }
