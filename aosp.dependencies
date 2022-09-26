@@ -2,7 +2,7 @@
   {
     "repository"  : "kernel_motorola_msm8998",
     "target_path" : "kernel/motorola/msm8998",
-    "branch"      : "thirteen",
+    "branch"      : "thirteen-wip",
     "remote"      : "pixel-devices"
   },
   {
