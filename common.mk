@@ -363,8 +363,8 @@ PRODUCT_PACKAGES += \
 # Shims
 PRODUCT_PACKAGES += \
     libcutils_shim \
-    libqsapshim \
-    libmemset_shim
+    libmemset_shim \
+    libqsap_shim
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
