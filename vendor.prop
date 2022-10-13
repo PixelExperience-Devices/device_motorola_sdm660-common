@@ -180,7 +180,6 @@ persist.vendor.radio.sw_mbn_update=0
 persist.vendor.sys.cnd.iwlan=1
 ro.telephony.call_ring.multiple=false
 ro.telephony.default_network=10,10
-ro.telephony.iwlan_operation_mode=legacy
 ro.vendor.build.vendorprefix=/vendor
 ro.vendor.telephony.default_network=10,10
 ro.vendor.use_data_netmgrd=true
