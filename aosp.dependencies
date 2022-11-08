@@ -16,11 +16,5 @@
     "target_path" : "hardware/motorola",
     "branch"      : "thirteen",
     "remote"      : "pixel"
-  },
-  {
-    "repository": "system_qcom",
-    "target_path": "system/qcom",
-    "branch": "thirteen",
-    "remote": "pixel"
   }
 ]
