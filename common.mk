@@ -410,7 +410,7 @@ PRODUCT_PACKAGES += \
     libgui_vendor \
     vndk_package
 
-PRODUCT_EXTRA_VNDK_VERSIONS := 28 29 30
+PRODUCT_EXTRA_VNDK_VERSIONS := 30
 
 # Wifi
 PRODUCT_COPY_FILES += \
