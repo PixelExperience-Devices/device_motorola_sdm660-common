@@ -59,9 +59,6 @@ BOARD_USES_ALSA_AUDIO := true
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 
-# Camera
-USE_CAMERA_STUB := true
-
 # Display
 TARGET_USES_ION := true
 TARGET_USES_HWC2 := true
