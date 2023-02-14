@@ -24,8 +24,8 @@ ro.qc.sdk.audio.ssr=false
 
 # Bluetooth
 bt.max.hfpclient.connections=1
-vendor.bluetooth.soc=cherokee
 ro.bluetooth.a4wp=false
+vendor.bluetooth.soc=cherokee
 
 # Camera
 vidc.enc.dcvs.extra-buff-count=2
@@ -41,19 +41,19 @@ ro.com.google.clientidbase.yt=android-motorola
 
 # Radio
 persist.data.netmgrd.qos.enable=true
-persist.radio.aosp_usr_pref_sel=true
-persist.radio.pb.min.match=7
-persist.radio.fi_supported=1
 persist.data.qmi.adb_logmask=0
-persist.radio.adb_log_on=0
 persist.net.doxlat=true
-persist.vendor.ims.dropset_feature=0
+persist.radio.adb_log_on=0
+persist.radio.aosp_usr_pref_sel=true
+persist.radio.fi_supported=1
+persist.radio.pb.min.match=7
+persist.vendor.ims.disableADBLogs=0
+persist.vendor.ims.disableDebugDataPathLogs=0
 persist.vendor.ims.disableDebugLogs=0
 persist.vendor.ims.disableIMSLogs=0
-persist.vendor.ims.disableDebugDataPathLogs=0
-persist.vendor.ims.disableADBLogs=0
-persist.vendor.ims.vt.enableadb=3
 persist.vendor.ims.disableQXDMLogs=1
+persist.vendor.ims.dropset_feature=0
+persist.vendor.ims.vt.enableadb=3
 
 # Skia
 # (b/183612348): Enable skia reduceOpsTaskSplitting
