@@ -1,4 +1,4 @@
-# Common proprietary files - from motorola/lake_retail/lake:10/QPWS30.61-21-18-7/fac4a:user/release-keys, unless pinned
+# Common proprietary files - from motorola/lake_retail/lake:10/QPWS30.61-21-18-7-3/284d4d:user/release-keys, unless pinned
 
 # ADSP
 vendor/bin/adsprpcd
