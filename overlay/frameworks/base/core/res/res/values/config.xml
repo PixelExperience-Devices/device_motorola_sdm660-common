@@ -551,4 +551,7 @@
         <item>org.lineageos.aperture.dev</item>
     </string-array>
 
+    <!-- Flag indicating whether notification and ringtone volumes
+         are controlled together (aliasing is true) or not. -->
+    <bool name="config_alias_ring_notif_stream_types">false</bool>
 </resources>
