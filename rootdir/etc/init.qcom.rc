@@ -1179,10 +1179,6 @@ on property:sys.wifi.tethering=false
 on property:sys.sysctl.swappiness=*
     write /proc/sys/vm/swappiness ${sys.sysctl.swappiness}
 
-#Override fwpath string when wpa_supplicant server was killed
-on property:init.svc.wpa_supplicant=running
-    write /sys/module/wlan/parameters/fwpath sta
-
 #Peripheral manager
 service vendor.per_mgr /vendor/bin/pm-service
     class core
