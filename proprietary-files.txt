@@ -1,4 +1,5 @@
-# Common proprietary files - from motorola/lake_retail/lake:10/QPWS30.61-21-18-7-3/284d4d:user/release-keys, unless pinned
+## All proprietary files from this list, unless pinned and noted otherwise,
+## are from lake_retail (QPWS30.61-21-18-7-12).
 
 # ADSP
 vendor/bin/adsprpcd
@@ -47,11 +48,11 @@ vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 
 # Camera
-vendor/lib/libmot_gpu_mapper.so
+vendor/lib/libmot_gpu_mapper.so|6e82d77ccba4938dc27790f410d04de61688c309|dad9b6f28f70d011484188c39077cf6a91cef5b5
 
 # CNE
-product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml
-product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml
+product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml|335d6da6763240d58a1598f95bed50bb80e3e71d|75e8a824d368cd4172985c884796381327d950da
+product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml|f21207db1805ec6ba512f526b795822794ff6274|620c9fa0047bb681e918af2d1e7a98c648f45fb7
 product/framework/vendor.qti.data.factory-V1.0-java.jar
 product/framework/vendor.qti.data.factory-V2.0-java.jar
 product/framework/vendor.qti.hardware.data.connection-V1.0-java.jar
@@ -386,7 +387,7 @@ product/etc/permissions/com.motorola.motodisplay.xml
 vendor/etc/permissions/com.motorola.camera2.xml|6d77e9310c6647cda3c35f64097a14a1bda798d3
 
 # Offmode charging
-vendor/bin/charge_only_mode
+vendor/bin/charge_only_mode|7abae0e894fd36fd10795099b4a5025df2c1e817|0ba9713157beb424eef3e9af721374e18c88bd89
 vendor/bin/hvdcp_opti
 
 # Perf
@@ -535,7 +536,7 @@ vendor/lib64/libadropbox.so
 vendor/lib64/libconfigdb.so
 vendor/lib64/liblog_vendor.so
 vendor/lib64/liblqe.so
-vendor/lib64/libmdmcutback.so
+vendor/lib64/libmdmcutback.so|66254ddc3f0625099a683d09f83c22bbbe506945|adde8b3b970a8196ffe52846f0d3cb99800b4228
 vendor/lib64/libmdmdetect.so
 vendor/lib64/libmotext_inf.so
 vendor/lib64/libnetmgr.so
@@ -551,7 +552,7 @@ vendor/lib64/libqmimotext.so
 -vendor/lib64/libqmiservices.so
 vendor/lib64/libqrtr.so
 vendor/lib64/libqsocket.so
-vendor/lib64/libril-qc-hal-qmi.so
+vendor/lib64/libril-qc-hal-qmi.so|8c034c39340febfd18167c7a9dc9a6ee3a23f5c4|1d49eea411e9e50c2670415fe4e3ab198b4f9203
 vendor/lib64/libril-qc-ltedirectdisc.so
 vendor/lib64/libril-qc-qmi-1.so
 vendor/lib64/libril-qc-radioconfig.so
@@ -614,8 +615,8 @@ product/lib/com.qualcomm.qti.imscmservice@2.1.so
 product/lib/com.qualcomm.qti.imscmservice@2.2.so
 product/lib/com.qualcomm.qti.uceservice@2.0.so
 product/lib/com.qualcomm.qti.uceservice@2.1.so
-product/lib/lib-imscamera.so
-product/lib/lib-imsvideocodec.so
+product/lib/lib-imscamera.so|7629ad897d5b1dae12edcebfb729979d80ded68b|38cea03de292af1e11030241e21a0e9cbd792d5b
+product/lib/lib-imsvideocodec.so|898aee4787b9c2bfa616b8eb66b535efd71b8536|bb2c71bbd00c318974d042648fd218b71d566ea4
 product/lib/lib-imsvt.so
 product/lib/lib-imsvtextutils.so
 product/lib/lib-imsvtutils.so
@@ -632,8 +633,8 @@ product/lib64/com.qualcomm.qti.imscmservice@2.1.so
 product/lib64/com.qualcomm.qti.imscmservice@2.2.so
 product/lib64/com.qualcomm.qti.uceservice@2.0.so
 product/lib64/com.qualcomm.qti.uceservice@2.1.so
-product/lib64/lib-imscamera.so
-product/lib64/lib-imsvideocodec.so
+product/lib64/lib-imscamera.so|4f853b6bffc87f17444e7afa001a0a132bbd384e|801874f74634f44954cad54f1b1c456fd8dd86c7
+product/lib64/lib-imsvideocodec.so|47e30b2753fe5a340fe7a443fc3b3de5207a39b8|e8c80fdb476b1cab1573719a845ea91bea069925
 product/lib64/lib-imsvt.so
 product/lib64/lib-imsvtextutils.so
 product/lib64/lib-imsvtutils.so
