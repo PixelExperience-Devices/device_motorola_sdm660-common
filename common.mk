@@ -348,8 +348,6 @@ PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.2.vendor
 
 # Recovery
-TARGET_RECOVERY_DENSITY := xhdpi
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/init.recovery.qcom.rc:root/init.recovery.qcom.rc
 
