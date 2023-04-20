@@ -54,9 +54,5 @@ persist.vendor.ims.disableIMSLogs=0
 persist.vendor.ims.disableQXDMLogs=1
 persist.vendor.ims.dropset_feature=0
 
-# Skia
-# (b/183612348): Enable skia reduceOpsTaskSplitting
-renderthread.skia.reduceopstasksplitting=true
-
 # Time daemon
 persist.vendor.delta_time.enable=true
