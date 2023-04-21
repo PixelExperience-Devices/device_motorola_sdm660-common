@@ -77,9 +77,6 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     vendor.qti.hardware.btconfigstore@1.0.vendor
 
-# Boot animation
-TARGET_BOOTANIMATION_HALF_RES := true
-
 # Boot control HAL
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl \
