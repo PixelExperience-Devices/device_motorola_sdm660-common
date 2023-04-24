@@ -28,7 +28,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     private static final String TAG = "MotoPocketMode";
 
     @Override
-    public void onReceive(Context context, Intent intent) {
+    public void onReceive(final Context context, Intent intent) {
         Log.d(TAG, "Starting");
         context.startServiceAsUser(new Intent(context, PocketModeService.class),
                 UserHandle.CURRENT);
