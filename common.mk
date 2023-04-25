@@ -32,6 +32,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+PRODUCT_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-pe
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Audio
