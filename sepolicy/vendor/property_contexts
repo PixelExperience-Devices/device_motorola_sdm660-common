@@ -60,6 +60,7 @@ pdaf.eep.default u:object_r:camera_prop:s0
 pdaf.eep.dump u:object_r:camera_prop:s0
 facedetect.weight u:object_r:camera_prop:s0
 video.disable.ubwc u:object_r:camera_prop:s0
+persist.tnr.process.plates u:object_r:camera_prop:s0
 
 # Radio
 ro.build.motfactory u:object_r:vendor_radio_prop:s0
