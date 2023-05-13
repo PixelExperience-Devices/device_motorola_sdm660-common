@@ -119,6 +119,7 @@ ro.hardware.vulkan=sdm660
 ro.opengles.version=196610
 vendor.display.disable_scaler=1
 vendor.gralloc.enable_fb_ubwc=1
+debug.sf.predict_hwc_composition_strategy=0
 
 # Factory reset partition
 ro.frp.pst=/dev/block/platform/soc/c0c4000.sdhci/by-name/frp
