@@ -10,4 +10,5 @@ allow pocketmode_app system_app_data_file:dir create_dir_perms;
 allow pocketmode_app system_app_data_file:{ file lnk_file } create_file_perms;
 
 # Allow pocketmode_app to write to sysfs_fpc_proximity
+allow pocketmode_app sysfs_fingerprint:dir r_dir_perms;
 allow pocketmode_app sysfs_fps_proximity:file { w_file_perms getattr };
