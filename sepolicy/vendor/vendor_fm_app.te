@@ -1,2 +1,3 @@
 # FM2 app (com.caf.fmradio)
 get_prop(vendor_fm_app, vendor_fm_prop)
+get_prop(vendor_fm_app, vendor_fm_radio_app_prop)
