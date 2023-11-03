@@ -1,2 +1,4 @@
 allow healthd sysfs_healthd:dir r_dir_perms;
 allow healthd sysfs_healthd:file rw_file_perms;
+allow healthd sysfs_healthd:file { open read write };
+allow healthd sysfs_healthd:lnk_file { read };
