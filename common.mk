@@ -344,8 +344,7 @@ PRODUCT_PACKAGES += \
 
 # Radio
 PRODUCT_PACKAGES += \
-    librmnetctl \
-    libprotobuf-cpp-full
+    librmnetctl
 
 # RIL
 PRODUCT_PACKAGES += \
