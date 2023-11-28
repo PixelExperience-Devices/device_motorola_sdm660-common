@@ -24,8 +24,6 @@
 
 PLATFORM_PATH := device/motorola/sdm660-common
 
-TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
-
 # APEX
 OVERRIDE_TARGET_FLATTEN_APEX := true
 
