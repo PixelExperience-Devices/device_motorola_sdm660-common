@@ -128,6 +128,9 @@ debug.cpurend.vsync=false
 # Factory reset partition
 ro.frp.pst=/dev/block/platform/soc/c0c4000.sdhci/by-name/frp
 
+# IMS
+ro.vendor.radio.ims_version=AT3.1_IR92_V10.0
+
 # OEM Unlock reporting
 ro.oem_unlock_supported=1
 
