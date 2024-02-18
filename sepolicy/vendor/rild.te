@@ -20,6 +20,7 @@ allow rild cutback_data_file:sock_file { create write unlink };
 allow rild cutback_socket:sock_file { ioctl read write create getattr setattr lock append map unlink rename open };
 
 allow rild input_device:chr_file { ioctl open read };
+allow rild fwk_sensor_service:service_manager find;
 
 binder_call(rild, qtidataservices_app)
 dontaudit rild diag_device:chr_file rw_file_perms;
