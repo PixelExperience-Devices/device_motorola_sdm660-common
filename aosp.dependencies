@@ -16,5 +16,11 @@
     "target_path" : "hardware/motorola",
     "branch"      : "fourteen",
     "remote"      : "pixel"
+  },
+  {
+    "repository": "vendor_motorola-extra",
+    "target_path": "vendor/motorola-extra",
+    "branch": "fourteen",
+    "remote": "pixel-devices-blobs"
   }
 ]

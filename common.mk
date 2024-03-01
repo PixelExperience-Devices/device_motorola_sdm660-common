@@ -444,3 +444,6 @@ PRODUCT_PACKAGES += \
     WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf \
+
+# Inherit extra stuff
+$(call inherit-product-if-exists,vendor/motorola-extra/config.mk)
