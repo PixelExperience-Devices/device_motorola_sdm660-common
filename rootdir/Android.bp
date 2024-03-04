@@ -65,8 +65,8 @@ sh_binary {
 }
 
 sh_binary {
-    name: "init.qti.qseecomd.sh",
-    src: "bin/init.qti.qseecomd.sh",
+    name: "init.qcom.sh",
+    src: "bin/init.qcom.sh",
     soc_specific: true,
 }
 
