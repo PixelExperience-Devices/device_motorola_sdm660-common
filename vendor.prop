@@ -95,7 +95,6 @@ bluetooth.profile.pan.panu.enabled?=true
 bluetooth.profile.pbap.server.enabled?=true
 bluetooth.profile.sap.server.enabled?=true
 persist.vendor.bt.aac_frm_ctl.enabled=true
-persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac
 vendor.qcom.bluetooth.soc=cherokee
 
 # Camera

@@ -1,2 +1,5 @@
+# Bluetooth
+persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac
+
 # IMS
 ro.telephony.block_binder_thread_on_incoming_calls=false
