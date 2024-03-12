@@ -593,6 +593,9 @@ vendor/radio/qcril_database/upgrade/5_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/6_version_qcrildb.sql
 vendor/radio/qcril_database/upgrade/9_version_qcrildb.sql
 
+# Radio - qc_logger - from nio user-12-S1RTS32.41-20-16-1-5-d6673-release-keys
+vendor/lib64/libril-qc-logger.so|8e63a5a9e99945a12fd8684c628a5bffa9b3218a
+
 # Radio - IMS
 product/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
 product/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml
